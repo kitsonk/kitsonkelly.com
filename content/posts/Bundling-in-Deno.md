@@ -1,9 +1,9 @@
----
-title: Bundling in Deno
-date: 2019-12-09 11:21:54
-tags:
-  - deno
----
++++
+title = "Bundling in Deno"
+date = 2019-12-10T09:00:00Z
+tags = ["deno", "bundling"]
+comments = true
++++
 
 I've been working on [Deno](https://deno.land/) for a while now, and one of the features I am proud of, which I wanted to share a bit more detail on, is how we do bundling.
 
@@ -109,3 +109,13 @@ export const Context = __rootExports["Context"];
 export const HttpError = __rootExports["HttpError"];
 export const composeMiddleware = __rootExports["composeMiddleware"];
 ```
+
+# The future
+
+Even shipping the named exports isn't the end of the road for bundling.  We want to be able to emit declaration files for the bundle, along side of the single JavaScript file.  This will make it easier to consume a bundle in a type safe way.
+
+We also need generate source maps for the bundles.  Because we have to wrap the output with the loader and the named exports, the source map that is generated is invalid.  So we need to modify the source maps quickly and efficiently when generating the bundle.
+
+I am currently in the process of exposing user friendly compiler APIs in the runtime environment in Deno.  So in the near future, you as a user will be able to do `Deno.bundle()` and get returned to you effectively the same bundle as if you did it on the command line.  The ability to do "on the fly" transpiles as a sever becomes realistic in Deno, without other tooling.  You can also tweak the compiler configuration, so it becomes a bit more realistic to generate a bundle for something on the browser.  `deno bundle` is specifically opinionated to work well as Deno as the runtime, but the fact that it is an ES module does mean it can likely be directly loaded in a lot of browsers, but that isn't what it is designed for.  Giving runtime access to both compiling, transpiling, and bundling should allow users more fine grained control including the ability to do pre or post processing to make sure it suits their needs.
+
+Eventually the bundle should be able to be generated into a snapshot and provide a single binary executable that can be used.  In particular for edge computing, having all the code and the runtime bundled together is a compelling case.

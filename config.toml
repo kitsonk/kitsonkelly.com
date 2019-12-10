@@ -2,6 +2,17 @@ baseurl = "/"
 languageCode = "en-gb"
 theme = "hello-friend-ng"
 disqusShortname = "kitsonkelly"
+canonifyURLs = true
+
+enableRobotsTXT = true
+enableGitInfo   = false
+enableEmoji     = true
+
+[author]
+  name = "Kitson Kelly"
+
+[blackfriday]
+  hrefTargetBlank = true
 
 [params]
   dateform        = "Jan 2, 2006"
@@ -10,7 +21,7 @@ disqusShortname = "kitsonkelly"
   dateformNumTime = "2006-01-02 15:04 -0700"
 
   # Set disableReadOtherPosts to true in order to hide the links to other posts.
-  disableReadOtherPosts = false
+  disableReadOtherPosts = true
 
   # Metadata mostly used in document's head
   description = "Homepage and blog for Kitson Kelly"
@@ -23,29 +34,49 @@ disqusShortname = "kitsonkelly"
   # Default theme "light" or "dark"
   defaultTheme = "dark"
 
+  justifyContent = true
+
+  [[params.social]]
+    name = "twitter"
+    url  = "https://twitter.com/kitsonk/"
+
+  [[params.social]]
+    name = "github"
+    url  = "https://github.com/kitsonk/"
+
+  [[params.social]]
+    name = "linkedin"
+    url  = "https://www.linkedin.com/in/kitsonkelly/"
+  
+  [[params.social]]
+    name = "facebook"
+    url  = "https://www.facebook.com/kitsonk"
+
+  [[params.social]]
+    name = "instagram"
+    url  = "https://www.instagram.com/kitsonk/"
+
 [languages]
   [languages.en]
     title = "kitsonkelly.com"
     subtitle = "A recovering 7ft tall cactus"
     keywords = ""
-    copyright = ""
+    copyright = "Copyright 2017-2019 Kitson P. Kelly"
     readOtherPosts = "Read other posts"
 
     [languages.en.params.logo]
       logoText = "whoami"
       logoHomeLink = "/"
-    # or
-    #
-    # path = "/img/your-example-logo.svg"
-    # alt = "Your example logo alt text"
 
-  # And you can even create generic menu
   [[menu.main]]
     identifier = "blog"
     name       = "blog"
     url        = "/posts"
-
   [[menu.main]]
     identifier = "resume"
     name       = "resume/cv"
     url        = "/resume"
+  [[menu.main]]
+    identifier = "about"
+    name       = "about"
+    url        = "/about"
