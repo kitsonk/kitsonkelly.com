@@ -2,6 +2,7 @@ baseurl = "/"
 languageCode = "en-gb"
 theme = "hello-friend-ng"
 disqusShortname = "kitsonkelly"
+googleAnalytics = "UA-42376316-1"
 canonifyURLs = true
 
 enableRobotsTXT = true
@@ -61,7 +62,7 @@ enableEmoji     = true
     title = "kitsonkelly.com"
     subtitle = "A recovering 7ft tall cactus"
     keywords = ""
-    copyright = "Copyright 2017-2019 Kitson P. Kelly"
+    copyright = "Copyright 2017-2020 Kitson P. Kelly"
     readOtherPosts = "Read other posts"
 
     [languages.en.params.logo]
