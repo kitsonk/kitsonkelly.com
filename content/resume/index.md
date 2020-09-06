@@ -9,9 +9,15 @@ I am a dual US/UK citizen. I am a permanent resident of Australia.
 
 ---
 
+## Stuff
+
+#### [Deno Land, Inc.](https://deno.land) - Melbourne, Australia — Sept 2020 - Present
+
+Working on Deno full time.
+
 ## Principal Technologist
 
-#### [ThoughtWorks](https://www.thoughtworks.com) — Melbourne, Australia — Jan 2018 - Present
+#### [ThoughtWorks](https://www.thoughtworks.com) — Melbourne, Australia — Jan 2018 - Sept 2020
 
 ThoughtWorks provides consulting and technology delivery services to large IT organisations. As a Principal Technologist I have been focusing on advising clients, mostly in the financial sector, on their digital transformation strategy, data platform strategy, platform architecture, and engineering practices.
 

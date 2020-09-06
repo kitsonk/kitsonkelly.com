@@ -7,11 +7,11 @@ As you might have guessed, this is my personal website.  I am 40 something-ish t
 
 I am a recovering 7ft cactus, as during my senior year of high school, I decided to try-out to be our high school mascot, and well, they felt I was qualified enough to crawl into a giant cactus and run around.  Not only did it traumatize me, but also several small children.
 
-These days, I live with my husband. We have been together for about 19 years.
+These days, I live with my husband. We have been together for about 20 years.
 
 ## Tech and Talks
 
-I used to be the project lead for Dojo 2, a web framework focused on making enterprise web application development better.  Currently, in my spare time, I am a core contributor to [Deno](https://deno.land/).
+I used to be the project lead for Dojo 2, a web framework focused on making enterprise web application development better.  Currently, I work for Deno Land and am a core contributor to [Deno](https://deno.land/).
 
 I have given a number of talks on various topics over the years, if you are curious:
 
@@ -22,3 +22,4 @@ I have given a number of talks on various topics over the years, if you are curi
 * More anti-patterns in [7 Habits of Highly Ineffective Developers](https://skillsmatter.com/skillscasts/8489-7-habits-of-highly-ineffective-developers)
 * A far more recent talk on [TypeScript: TL;DR](https://pusher.com/sessions/meetup/js-monthly-london/an-introduction-to-typescript)
 * An [Overview of Electron](https://skillsmatter.com/skillscasts/10216-overview-of-electron-the-web-is-everywhere) as FullStack 2017
+* My talk with Ryan Dahl about [Deno at TSConf 2019](https://www.youtube.com/watch?v=1gIiZfSbEAE).
