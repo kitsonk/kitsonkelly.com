@@ -1,0 +1,99 @@
+section:
+  name: Experiences
+  enable: true
+  weight: 5
+  showOnNavbar: true
+
+experiences:
+- company:
+    name: Deno Land, Inc.
+    url: "https://deno.land/"
+    overview: Creators of Deno, a secure runtime for JavaScript and TypeScript built with Rust and v8.
+  positions:
+  - designation: Doing Stuff
+    start: Sep 2020
+    responsibilities:
+    - Stuff
+
+- company:
+    name: ThoughtWorks
+    url: "https://thoughtworks.com/"
+    location: Melbourne, Australia
+    overview: A global software consultancy.
+  positions:
+  - designation: Principal Technologist
+    start: Jan 2018
+    end: Sep 2020
+    responsibilities:
+    - Stuff
+
+- company:
+    name: SitePen
+    url: "https://sitepen.com/"
+    location: London, UK
+    overview: Enterprise web applications done right.
+  positions:
+  - designation: CTO
+    start: Aug 2015
+    end: Dec 2017
+    responsibilities:
+    - Stuff
+
+- company:
+    name: NOW TV
+    url: "https://nowtv.com/"
+    location: London, UK
+    overview: Stream the best and latest TV without a contract.
+  positions:
+  - designation: Head of Technology
+    start: Sep 2013
+    end: Aug 2015
+    responsibilities:
+    - Stuff
+
+- company:
+    name: Sky Business
+    url: "https://skyforbusiness.sky.com/"
+    location: Livingston, UK
+    overview: Providing commercial TV and broadband solutions for UK Businesses
+  positions:
+  - designation: Head of Technology
+    start: May 2010
+    end: Sep 2013
+    responsibilities:
+    - Stuff
+
+- company:
+    name: Asseverate Services Ltd.
+    url: "https://asseverate.co.uk/"
+    location: London, UK
+    overview: Providing technology consulting services.
+  positions:
+  - designation: Director
+    start: Oct 2009
+    end: May 2010
+    responsibilities:
+    - Stuff
+
+- company:
+    name: Dimension Data
+    url: "https://www.dimensiondata.com"
+    location: London, UK
+    overview: IT Systems Integrator
+  positions:
+  - designation: Practice Solution Architect
+    start: Dec 2006
+    end: Oct 2009
+    responsibilities:
+    - Stuff
+
+- company:
+    name: eLoyalty
+    location: Lake Forest, IL, USA
+    overview: Software Consultancy
+  positions:
+  - designation: Senior Principal Consultant
+    start: Jan 1998
+    end: Sep 2006
+    responsibilities:
+    - Stuff

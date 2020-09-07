@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Tags on Kitson P. Kelly Blog</title>
+    <link>https://kitsonkelly.com/tags/</link>
+    <description>Recent content in Tags on Kitson P. Kelly Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-gb</language>
+    <lastBuildDate>Thu, 28 May 2020 12:00:17 +1000</lastBuildDate>
+    
+	<atom:link href="https://kitsonkelly.com/tags/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>deno</title>
+      <link>https://kitsonkelly.com/tags/deno/</link>
+      <pubDate>Thu, 28 May 2020 12:00:17 +1000</pubDate>
+      
+      <guid>https://kitsonkelly.com/tags/deno/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>package manager</title>
+      <link>https://kitsonkelly.com/tags/package-manager/</link>
+      <pubDate>Thu, 28 May 2020 12:00:17 +1000</pubDate>
+      
+      <guid>https://kitsonkelly.com/tags/package-manager/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>registry</title>
+      <link>https://kitsonkelly.com/tags/registry/</link>
+      <pubDate>Thu, 28 May 2020 12:00:17 +1000</pubDate>
+      
+      <guid>https://kitsonkelly.com/tags/registry/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>bundling</title>
+      <link>https://kitsonkelly.com/tags/bundling/</link>
+      <pubDate>Tue, 10 Dec 2019 09:00:00 +0000</pubDate>
+      
+      <guid>https://kitsonkelly.com/tags/bundling/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>golang</title>
+      <link>https://kitsonkelly.com/tags/golang/</link>
+      <pubDate>Thu, 31 May 2018 09:18:03 +0000</pubDate>
+      
+      <guid>https://kitsonkelly.com/tags/golang/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>typescript</title>
+      <link>https://kitsonkelly.com/tags/typescript/</link>
+      <pubDate>Thu, 31 May 2018 09:18:03 +0000</pubDate>
+      
+      <guid>https://kitsonkelly.com/tags/typescript/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>v8</title>
+      <link>https://kitsonkelly.com/tags/v8/</link>
+      <pubDate>Thu, 31 May 2018 09:18:03 +0000</pubDate>
+      
+      <guid>https://kitsonkelly.com/tags/v8/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>conference</title>
+      <link>https://kitsonkelly.com/tags/conference/</link>
+      <pubDate>Tue, 13 Mar 2018 14:28:59 +0000</pubDate>
+      
+      <guid>https://kitsonkelly.com/tags/conference/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>technology</title>
+      <link>https://kitsonkelly.com/tags/technology/</link>
+      <pubDate>Tue, 13 Mar 2018 14:28:59 +0000</pubDate>
+      
+      <guid>https://kitsonkelly.com/tags/technology/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Australia</title>
+      <link>https://kitsonkelly.com/tags/australia/</link>
+      <pubDate>Wed, 03 Jan 2018 15:42:39 +0000</pubDate>
+      
+      <guid>https://kitsonkelly.com/tags/australia/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>travel</title>
+      <link>https://kitsonkelly.com/tags/travel/</link>
+      <pubDate>Wed, 03 Jan 2018 15:42:39 +0000</pubDate>
+      
+      <guid>https://kitsonkelly.com/tags/travel/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>America</title>
+      <link>https://kitsonkelly.com/tags/america/</link>
+      <pubDate>Sun, 25 Jun 2017 16:55:36 +0000</pubDate>
+      
+      <guid>https://kitsonkelly.com/tags/america/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>politics</title>
+      <link>https://kitsonkelly.com/tags/politics/</link>
+      <pubDate>Sun, 25 Jun 2017 16:55:36 +0000</pubDate>
+      
+      <guid>https://kitsonkelly.com/tags/politics/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>nerd</title>
+      <link>https://kitsonkelly.com/tags/nerd/</link>
+      <pubDate>Fri, 16 Jun 2017 20:05:50 +0000</pubDate>
+      
+      <guid>https://kitsonkelly.com/tags/nerd/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>personal</title>
+      <link>https://kitsonkelly.com/tags/personal/</link>
+      <pubDate>Sat, 10 Jun 2017 16:41:40 +0000</pubDate>
+      
+      <guid>https://kitsonkelly.com/tags/personal/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,503 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Bundling in Deno</title>
+    <meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+
+
+<link rel="stylesheet" href="/assets/css/bootstrap.min.css" />
+<link rel="stylesheet" href="/assets/css/layouts/main.css" />
+<link rel="stylesheet" href="/assets/css/style.css" />
+<link rel="stylesheet" href="/assets/css/navigators/navbar.css" />
+
+
+<link href="https://fonts.googleapis.com/css2?family=Muli:wght@300;400;500;600" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css" />
+
+
+<link rel="icon" type="image/png" href="/assets/images/favicon.png" />
+
+
+<link rel="stylesheet" href="/assets/css/style.css" />
+
+    
+<meta name="description" content="Bundling in Deno" />
+<link
+  rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.1/styles/atom-one-dark.min.css"
+/>
+<link rel="stylesheet" href="/assets/css/layouts/single.css" />
+<link rel="stylesheet" href="/assets/css/navigators/sidebar.css">
+
+
+    
+    
+      
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-42376316-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+    
+  </head>
+
+  <body data-spy="scroll" data-target="#TableOfContents" data-offset="80">
+    <div class="container-fluid bg-dimmed wrapper">
+      
+      
+    <nav class="navbar navbar-expand-xl top-navbar final-navbar shadow">
+  <div class="container">
+    
+    
+    
+      
+    
+    
+      
+    
+      <button class="navbar-toggler navbar-light" id="sidebar-toggler" type="button" onclick="toggleSidebar()">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <a class="navbar-brand" href="https://kitsonkelly.com/">
+      <img src="/images/cactus_logo_black.png">Kitson P. Kelly Blog</a>
+    <button class="navbar-toggler navbar-light" id="toc-toggler" type="button" onclick="toggleTOC()">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="top-nav-items">
+      <ul class="navbar-nav ml-auto">
+      </ul>
+    </div>
+  </div>
+  
+  <img src="/images/cactus_logo_black.png" class="d-none" id="main-logo">
+  <img src="/images/cactus_logo_white.png" class="d-none" id="inverted-logo">
+</nav>
+
+
+
+      
+      
+  <section class="sidebar-section" id="sidebar-section">
+    <div class="sidebar-holder">
+      <div class="sidebar" id="sidebar">
+        <input type="text" value="" placeholder="Search" data-search="" id="search-box" />
+        <div class="sidebar-tree">
+          <ul class="tree" id="tree">
+            <li id="list-heading"><a href="/posts" data-filter="all">Posts</a></li>
+            <div class="subtree">
+                
+  
+  
+  
+  
+  
+    
+    <li><a class="" href="/posts/fanboy/">Fanboy</a></li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li><a class="" href="/posts/going-down-under/">Going Down Under</a></li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li><a class="" href="/posts/tsconf-2018/">TSConf 2018</a></li>
+  
+
+  
+  
+  
+  
+    
+    
+  
+  
+    
+    <li>
+      <i class="fas fa-minus-circle"></i><a class="active" href="">Deno</a>
+      
+      <ul class="active">
+        
+  
+  
+  
+  
+  
+    
+    <li><a class="" href="/posts/deno-is-a-browser-for-code/">Deno is a Browser for Code</a></li>
+  
+
+  
+  
+  
+  
+    
+    
+  
+  
+    
+    <li><a class="active" href="/posts/bundling-in-deno/">Bundling</a></li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li><a class="" href="/posts/experiments-with-deno/">Experiments</a></li>
+  
+
+
+      </ul>
+    </li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li>
+      <i class="fas fa-plus-circle"></i><a class="" href="">Politics</a>
+      
+      <ul class="">
+        
+  
+  
+  
+  
+  
+    
+    <li><a class="" href="/posts/sick-america/">Sick America</a></li>
+  
+
+
+      </ul>
+    </li>
+  
+
+
+            </div>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+      
+      
+<section class="content-section" id="content-section">
+  <div class="content">
+    <div class="container p-0 read-area">
+      
+      <div class="hero-area col-sm-12" id="hero-area" style='background-image: url(https://kitsonkelly.com/assets/images/default-hero.jpg);'>
+      </div>
+
+      
+      <div class="page-content">
+        <div class="author-profile ml-auto align-self-lg-center">
+          <img class="rounded-circle" src='/images/kpk_512.jpeg'/>
+          <h5 class="author-name">Kitson Kelly</h5>
+          <p>December 10, 2019</p>
+        </div>
+
+        <div class="title">
+          <h1>Bundling in Deno</h1>
+        </div>
+
+        <div class="post-content" id="post-content">
+          <p>I&rsquo;ve been working on <a href="https://deno.land/">Deno</a> for a while now, and one of the features I am proud of, which I wanted to share a bit more detail on, is how we do bundling.</p>
+<p>Deno typically does all the heavy lifting for you.  Modules are just URLs, so you don&rsquo;t need any special tooling to include modules like a package manager. For example if you wanted to run a static web server, you would only need to do something like this:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">&gt; deno run --allow-read --allow-net https://deno.land/x/oak/examples/staticServer.ts
+</code></pre></div><p>Then all the dependencies will be fetched for you, cached, the program compiled, and executed for you.  The next time you run the programme, Deno will realise that all the code, including any remote modules are already compiled and cached locally.</p>
+<p>But let&rsquo;s say you are building a server, where you want to distribute the programme?  Well, you could &ldquo;cache&rdquo; your Deno cache.  If it is present, then Deno won&rsquo;t try to go and fetch anything remote.  Wouldn&rsquo;t it be better though if you resolved all those dependencies and output a single JavaScript file that wouldn&rsquo;t need anything external to run?</p>
+<p>That was the motivation around <code>deno bundle</code>, to provide a single JavaScript file with all the dependencies resolved and included in the file.</p>
+<h2 id="esm">ESM</h2>
+<p>Deno works totally off of ES Modules.  Node.js has a main module format of CommonJS, and only recently allowed loading of ESM without a command line flag.  Evergreen browsers support ESM when you load a JavaScript file via <code>&lt;script type=&quot;module&quot;&gt;</code>, otherwise they are simply treated as global scripts.</p>
+<p>So, for Deno, we needed the output of <code>deno bundle</code> to be a valid ESM file, but we needed to include all the modules, but effectively ensure that the scope of each module is preserved.  ES Modules cannot be concatenated together in a single file, you end up with an invalid module.  This is true of CommonJS as well.  Bundlers like webpack and rollup do static analysis on code, and figure out how to re-scope a module so that it can be inlined safely.  They use an internal format to manage the instantiation of the different module scopes.</p>
+<p>So given the need to generate a valid ES module, and the need to be able to easily ensure the modules behaved in the same way as far as their scope, we needed a way to effectively concatenate all the dependencies.  We could build all the static analysis in, or we could look at a different approach.  The TypeScript compiler supports multiple module output formats, including two that can be concatenated: AMD and SystemJS.  Given that we would effectively have the whole analysis and bundling &ldquo;for free&rdquo; it made sense for us to use the TypeScript compiler to output the program to one of those module formats as a single file, which we chose AMD.</p>
+<p>Quite a few folks have questioned (and some even (╯°□°)╯︵ ┻━┻) the choice of AMD, as it is an &ldquo;antiquated technology&rdquo; holding us back.  My argument is that it is an implementation detail that users are abstracted from and shouldn&rsquo;t worry about it.  The alternative is to re-invent the wheel and create some sort of &ldquo;module scoping&rdquo;, re-writing each of the modules in a way that they can be inlined into a single file.  All of which is code that doesn&rsquo;t exist, when there is a well-known and well-tested solution that &ldquo;just works&rdquo; already built into Deno.</p>
+<p>So we built and released the MVP for bundling, which required that you utilise some sort of loader script to bootstrap the bundle.  And it worked, and it was something that we could build on.</p>
+<h2 id="dog-fooding">Dog fooding</h2>
+<p>In Deno, there is a lot of JavaScript and TypeScript code that defines the compiler, the runtime environment, and workers.  In order to speed up boot times we use a feature from V8 called &ldquo;snapshots&rdquo;, where we essentially run JavaScript code into V8, V8 does all the parsing of the code and loads it into memory.  We then take that memory and save it out to disk, and then build that into the <code>deno</code> binary.  So instead of having to read a lot of JavaScript, parse it, and allocate objects in memory, Deno just loads that directly into V8.</p>
+<p>In order to create these snapshots, we need to create a single JavaScript script file which can be loaded into the isolate.  Sound familiar?  Up until this point we had been using rollup to transpile the internal TypeScript and generate the single bundle.  But rollup requires Node.js, and we wanted to remove Node.js from our build pipeline.</p>
+<p>So we effectively ported the <code>deno bundle</code> logic into the <code>deno_typescript</code> part of Deno, which transpiles our TypeScript and outputs a single bundle for both the compiler and the runtime.  We load these bundles into V8 and then take a snapshot. (<a href="https://github.com/ry/">@ry</a> did most of this work, while I have done most of the rest of the bundling work)</p>
+<h2 id="integrating-the-loader">Integrating the loader</h2>
+<p>The next steps we wanted to take was to integrate a loader directly into the output.  Up to this point, you had to <code>run</code> an external loader script, which causes some problems (like messing up arguments available to the workload).  It also isn&rsquo;t as UX friendly.  We wanted to be able to do something like this:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">&gt; deno bundle https://deno.land/x/oak/examples/staticServer.ts staticServer.bundle.js
+&gt; deno run --allow-net --allow-read staticServer.bundle.js
+</code></pre></div><p>So we integrated the loader into Deno, so when the bundle is output, the loader is inlined and the internalised modules will be instantiated in the same way if we were loading them directly.</p>
+<h2 id="named-exports">Named exports</h2>
+<p>We had a couple users of Deno trying to generate bundles that weren&rsquo;t fully standalone programmes, but were in fact libraries that would be imported into another program.  This meant that not only did we need to generate a file that could be loaded as a valid ES module, but we also needed to ensure it exported the same things the original root module exported.  For example, if I wanted to create a single file library of a web server, which I can distribute and import into my programme, I want to be able to do something like this:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">&gt; deno bundle https://deno.land/x/oak/mod.ts oak.bundle.js
+</code></pre></div><p>So I can do the following in my program:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ts" data-lang="ts"><span style="color:#66d9ef">import</span> <span style="color:#f92672">*</span> <span style="color:#66d9ef">as</span> <span style="color:#a6e22e">oak</span> <span style="color:#a6e22e">from</span> <span style="color:#e6db74">&#34;./oak.bundle.js&#34;</span>;
+</code></pre></div><p>In order to do this, we needed a way to detect what is exported from that root module.  So a bit of experimenting with the TypeScript compiler allowed us to determine that information.  Here is a partial example of how we detected the named exports.  We already have our <code>ts.Program</code> which will be used to emit the files, and we know the module name of our <code>rootModule</code>:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ts" data-lang="ts"><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">rootSourceFile</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">program</span>.<span style="color:#a6e22e">getSourceFile</span>(<span style="color:#a6e22e">rootModule</span>);
+<span style="color:#66d9ef">const</span> <span style="color:#a6e22e">checker</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">program</span>.<span style="color:#a6e22e">getTypeChecker</span>();
+<span style="color:#66d9ef">const</span> <span style="color:#a6e22e">rootSymbol</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">checker</span>.<span style="color:#a6e22e">getSymbolAtLocation</span>(<span style="color:#a6e22e">rootSourceFile</span>);
+<span style="color:#66d9ef">const</span> <span style="color:#a6e22e">rootExports</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">checker</span>
+  .<span style="color:#a6e22e">getExportsOfModule</span>(<span style="color:#a6e22e">rootSymbol</span>)
+  .<span style="color:#a6e22e">map</span>(<span style="color:#a6e22e">sym</span> <span style="color:#f92672">=&gt;</span> <span style="color:#a6e22e">sym</span>.<span style="color:#a6e22e">getName</span>());
+</code></pre></div><p>At the end of this, <code>rootExports</code> will contain an array of strings which are the named exports (including potentially <code>default</code>) from the root ES Module.</p>
+<p>The one challenge is that the symbols returned with this process contain both things that will be emitted as well as type only exports (like interfaces) which are erased during the emit.  So we need to refine the list a bit further:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ts" data-lang="ts"><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">rootExports</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">checker</span>
+  .<span style="color:#a6e22e">getExportsOfModule</span>(<span style="color:#a6e22e">rootSymbol</span>)
+  .<span style="color:#a6e22e">filter</span>(
+    <span style="color:#a6e22e">sym</span> <span style="color:#f92672">=&gt;</span>
+      <span style="color:#f92672">!</span>(
+        <span style="color:#a6e22e">sym</span>.<span style="color:#a6e22e">flags</span> <span style="color:#f92672">&amp;</span> <span style="color:#a6e22e">ts</span>.<span style="color:#a6e22e">SymbolFlags</span>.<span style="color:#a6e22e">Interface</span> <span style="color:#f92672">||</span>
+        <span style="color:#a6e22e">sym</span>.<span style="color:#a6e22e">flags</span> <span style="color:#f92672">&amp;</span> <span style="color:#a6e22e">ts</span>.<span style="color:#a6e22e">SymbolFlags</span>.<span style="color:#a6e22e">TypeLiteral</span> <span style="color:#f92672">||</span>
+        <span style="color:#a6e22e">sym</span>.<span style="color:#a6e22e">flags</span> <span style="color:#f92672">&amp;</span> <span style="color:#a6e22e">ts</span>.<span style="color:#a6e22e">SymbolFlags</span>.<span style="color:#a6e22e">Signature</span> <span style="color:#f92672">||</span>
+        <span style="color:#a6e22e">sym</span>.<span style="color:#a6e22e">flags</span> <span style="color:#f92672">&amp;</span> <span style="color:#a6e22e">ts</span>.<span style="color:#a6e22e">SymbolFlags</span>.<span style="color:#a6e22e">TypeParameter</span> <span style="color:#f92672">||</span>
+        <span style="color:#a6e22e">sym</span>.<span style="color:#a6e22e">flags</span> <span style="color:#f92672">&amp;</span> <span style="color:#a6e22e">ts</span>.<span style="color:#a6e22e">SymbolFlags</span>.<span style="color:#a6e22e">TypeAlias</span> <span style="color:#f92672">||</span>
+        <span style="color:#a6e22e">sym</span>.<span style="color:#a6e22e">flags</span> <span style="color:#f92672">&amp;</span> <span style="color:#a6e22e">ts</span>.<span style="color:#a6e22e">SymbolFlags</span>.<span style="color:#a6e22e">Type</span> <span style="color:#f92672">||</span>
+        <span style="color:#a6e22e">sym</span>.<span style="color:#a6e22e">flags</span> <span style="color:#f92672">&amp;</span> <span style="color:#a6e22e">ts</span>.<span style="color:#a6e22e">SymbolFlags</span>.<span style="color:#a6e22e">Namespace</span> <span style="color:#f92672">||</span>
+        <span style="color:#a6e22e">sym</span>.<span style="color:#a6e22e">flags</span> <span style="color:#f92672">&amp;</span> <span style="color:#a6e22e">ts</span>.<span style="color:#a6e22e">SymbolFlags</span>.<span style="color:#a6e22e">InterfaceExcludes</span> <span style="color:#f92672">||</span>
+        <span style="color:#a6e22e">sym</span>.<span style="color:#a6e22e">flags</span> <span style="color:#f92672">&amp;</span> <span style="color:#a6e22e">ts</span>.<span style="color:#a6e22e">SymbolFlags</span>.<span style="color:#a6e22e">TypeParameterExcludes</span> <span style="color:#f92672">||</span>
+        <span style="color:#a6e22e">sym</span>.<span style="color:#a6e22e">flags</span> <span style="color:#f92672">&amp;</span> <span style="color:#a6e22e">ts</span>.<span style="color:#a6e22e">SymbolFlags</span>.<span style="color:#a6e22e">TypeAliasExcludes</span>
+      )
+  )
+  .<span style="color:#a6e22e">map</span>(<span style="color:#a6e22e">sym</span> <span style="color:#f92672">=&gt;</span> <span style="color:#a6e22e">sym</span>.<span style="color:#a6e22e">getName</span>());
+</code></pre></div><p>Then all we have to do, is with the bundle returned from the TypeScript compiler on emit, is to re-export all the named exports from the root module.  We add this to the bundle, and that might look something like this:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ts" data-lang="ts"><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">__rootExports</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">instantiate</span>(<span style="color:#e6db74">&#34;oak&#34;</span>);
+<span style="color:#66d9ef">export</span> <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">Application</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">__rootExports</span>[<span style="color:#e6db74">&#34;Application&#34;</span>];
+<span style="color:#66d9ef">export</span> <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">Context</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">__rootExports</span>[<span style="color:#e6db74">&#34;Context&#34;</span>];
+<span style="color:#66d9ef">export</span> <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">HttpError</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">__rootExports</span>[<span style="color:#e6db74">&#34;HttpError&#34;</span>];
+<span style="color:#66d9ef">export</span> <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">composeMiddleware</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">__rootExports</span>[<span style="color:#e6db74">&#34;composeMiddleware&#34;</span>];
+</code></pre></div><h2 id="the-future">The future</h2>
+<p>Even shipping the named exports isn&rsquo;t the end of the road for bundling.  We want to be able to emit declaration files for the bundle, along side of the single JavaScript file.  This will make it easier to consume a bundle in a type safe way.</p>
+<p>We also need generate source maps for the bundles.  Because we have to wrap the output with the loader and the named exports, the source map that is generated is invalid.  So we need to modify the source maps quickly and efficiently when generating the bundle.</p>
+<p>I am currently in the process of exposing user friendly compiler APIs in the runtime environment in Deno.  So in the near future, you as a user will be able to do <code>Deno.bundle()</code> and get returned to you effectively the same bundle as if you did it on the command line.  The ability to do &ldquo;on the fly&rdquo; transpiles as a sever becomes realistic in Deno, without other tooling.  You can also tweak the compiler configuration, so it becomes a bit more realistic to generate a bundle for something on the browser.  <code>deno bundle</code> is specifically opinionated to work well as Deno as the runtime, but the fact that it is an ES module does mean it can likely be directly loaded in a lot of browsers, but that isn&rsquo;t what it is designed for.  Giving runtime access to both compiling, transpiling, and bundling should allow users more fine grained control including the ability to do pre or post processing to make sure it suits their needs.</p>
+<p>Eventually the bundle should be able to be generated into a snapshot and provide a single binary executable that can be used.  In particular for edge computing, having all the code and the runtime bundled together is a compelling case.</p>
+
+        </div>
+
+        
+        
+          <div class="btn-improve-page">
+              <a href="https://github.com/kitsonk/kitsonkelly.com/edit/master/content/posts/Bundling-in-Deno.md">
+                <i class="fas fa-code-branch"></i>
+                Improve This Page
+              </a>
+          </div>
+        
+
+        
+      <hr />
+        <div class="row next-prev-navigator">
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+      
+      <div class="col-md-6 previous-article">
+        <a href="/posts/deno-is-a-browser-for-code/" class="btn btn-outline-info">
+          <span><i class="fas fa-chevron-circle-left"></i> Prev</span>
+          <br />
+          <span>Deno is a Browser for Code</span>
+        </a>
+      </div>
+      
+    
+    
+      
+        
+        
+          
+              
+          
+        
+        <div class="col-md-6 next-article">
+          <a href="/posts/experiments-with-deno/" class="btn btn-outline-info">
+            <span>Next <i class="fas fa-chevron-circle-right"></i></span>
+            <br />
+            <span>Experiments with Deno</span>
+          </a>
+        </div>
+      
+    
+  
+
+  
+
+</div>
+
+      <hr />
+      
+      
+          <div id="disqus_thread"></div>
+<script type="text/javascript">
+  (function () {
+    
+    
+    if (window.location.hostname == "localhost") return;
+
+    var dsq = document.createElement("script");
+    dsq.type = "text/javascript";
+    dsq.async = true;
+    var disqus_shortname = "kitsonkelly";
+    dsq.src = "//" + disqus_shortname + ".disqus.com/embed.js";
+    (
+      document.getElementsByTagName("head")[0] ||
+      document.getElementsByTagName("body")[0]
+    ).appendChild(dsq);
+  })();
+</script>
+<noscript
+  >Please enable JavaScript to view the
+  <a href="https://disqus.com/?ref_noscript"
+    >comments powered by Disqus.</a
+  ></noscript
+>
+<a href="https://disqus.com/" class="dsq-brlink"
+  >comments powered by <span class="logo-disqus">Disqus</span></a
+>
+
+      
+      </div>
+    </div>
+  </div>
+</section>
+
+
+      
+      
+  <section class="toc-section" id="toc-section">
+    
+    <div class="toc-holder">
+      <h5 class="text-center pl-3">Table of Contents</h5>
+      <hr>
+      <div class="toc">
+        <nav id="TableOfContents">
+  <ul>
+    <li><a href="#esm">ESM</a></li>
+    <li><a href="#dog-fooding">Dog fooding</a></li>
+    <li><a href="#integrating-the-loader">Integrating the loader</a></li>
+    <li><a href="#named-exports">Named exports</a></li>
+    <li><a href="#the-future">The future</a></li>
+  </ul>
+</nav>
+      </div>
+    </div>
+    
+  </section>
+
+    </div>
+
+    <footer class="container-fluid text-center align-content-center footer pb-2">
+  <div class="container pt-5">
+    <div class="row text-left">
+      <div class="col-md-4 col-sm-12">
+        <h5>Navigation</h5>
+        
+        <ul>
+            
+            <li class="nav-item">
+              <a class="smooth-scroll" href="/#about">About</a>
+            </li>
+            
+            
+            <li class="nav-item">
+              <a class="smooth-scroll" href="/#recent-posts">Recent Posts</a>
+            </li>
+            
+            
+            <li class="nav-item">
+              <a class="smooth-scroll" href="/#projects">Projects</a>
+            </li>
+            
+            
+            <li class="nav-item">
+              <a class="smooth-scroll" href="/#experiences">Experiences</a>
+            </li>
+            
+        </ul>
+        
+
+      </div>
+      <div class="col-md-4 col-sm-12">
+        <h5>Contact Me</h5>
+        <ul>
+          
+          <li><span>Email: </span> <span>me@kitsonkelly.com</span></li>
+          
+        </ul>
+      </div>
+      
+    </div>
+  </div>
+  <hr />
+  <div class="container">
+    <div class="row text-left">
+      <div class="col-md-4">
+        <a id="theme" href="https://github.com/hossainemruz/toha" target="#">
+          <img src="/assets/images/inverted-logo.png">
+          Toha
+        </a>
+      </div>
+      <div class="col-md-4 text-center">© 2017-2020 Kitson P. Kelly.</div>
+      <div class="col-md-4 text-right">
+        <a id="hugo" href="https://gohugo.io/">Powered by Hugo
+        <img
+          src="/assets/images/hugo-logo-wide.svg"
+          alt="Hugo Logo"
+          height="18"
+        />
+        </a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+    <script src="/assets/js/jquery-3.4.1.min.js"></script>
+<script src="/assets/js/bootstrap.min.js"></script>
+
+<script src="/assets/js/navbar.js"></script>
+<script src="/assets/js/main.js"></script>
+
+
+    
+    
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.1/highlight.min.js"></script>
+<script src="/assets/js/single.js"></script>
+<script>
+  hljs.initHighlightingOnLoad();
+</script>
+
+
+  </body>
+</html>

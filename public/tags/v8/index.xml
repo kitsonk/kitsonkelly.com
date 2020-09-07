@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>v8 on Kitson P. Kelly Blog</title>
+    <link>https://kitsonkelly.com/tags/v8/</link>
+    <description>Recent content in v8 on Kitson P. Kelly Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-gb</language>
+    <lastBuildDate>Thu, 31 May 2018 09:18:03 +0000</lastBuildDate>
+    
+	<atom:link href="https://kitsonkelly.com/tags/v8/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Experiments with Deno</title>
+      <link>https://kitsonkelly.com/posts/experiments-with-deno/</link>
+      <pubDate>Thu, 31 May 2018 09:18:03 +0000</pubDate>
+      
+      <guid>https://kitsonkelly.com/posts/experiments-with-deno/</guid>
+      <description>I saw the following tweet from Mohsen:
+Creator of Node.js has something cooking here: This is basically Node.js with libuv (and more) swapped with Go IO and network bindings. It has native @typescriptlang support and has a new/better module system https://t.co/oVRlX8vluf
+&amp;mdash; Mohsen Azimi (@mohsen____) May 30, 2018  And I got excited. While a TypeScript runtime was never an objective or goal of TypeScript, there is an argument that having a runtime, especially for a server side application, is better.</description>
+    </item>
+    
+  </channel>
+</rss>

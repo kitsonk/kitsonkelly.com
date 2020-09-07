@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>nerd on Kitson P. Kelly Blog</title>
+    <link>https://kitsonkelly.com/tags/nerd/</link>
+    <description>Recent content in nerd on Kitson P. Kelly Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-gb</language>
+    <lastBuildDate>Fri, 16 Jun 2017 20:05:50 +0000</lastBuildDate>
+    
+	<atom:link href="https://kitsonkelly.com/tags/nerd/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Fanboy</title>
+      <link>https://kitsonkelly.com/posts/fanboy/</link>
+      <pubDate>Fri, 16 Jun 2017 20:05:50 +0000</pubDate>
+      
+      <guid>https://kitsonkelly.com/posts/fanboy/</guid>
+      <description>I got to be a fanboy this week.
+It isn&amp;rsquo;t often that you get to meet someone who has their own wikipedia page. Let alone someone who had tangentially had a huge influence in your life. Anders has lived his life blissfully unaware of the impact he has had on mine.
+For those who don&amp;rsquo;t know, Anders is Technical Fellow at Microsoft and is the architect of many modern programming languages.</description>
+    </item>
+    
+  </channel>
+</rss>

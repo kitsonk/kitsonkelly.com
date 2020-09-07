@@ -1,0 +1,46 @@
+section:
+  name: Projects
+  enable: true
+  weight: 4
+  showOnNavbar: true
+
+projects:
+- name: Deno
+  logo: images/projects/deno.svg
+  role: Core Contributor
+  timeline: "May 2018 - Present"
+  repo: https://github.com/denoland/deno
+  summary: A secure runtime for JavaScript and TypeScript using Rust and v8.
+  tags: ["professional", "deno"]
+
+- name: oak
+  logo: images/projects/oak.png
+  role: Creator & Maintainer
+  timeline: "Dec 2018 - Present"
+  repo: https://github.com/oakserver/oak
+  summary: A middleware framework for Deno's net server.
+  tags: ["hobby", "deno"]
+
+- name: entente
+  logo: images/projects/h-o-t.png
+  role: Creator & Maintainer
+  timeline: "June 2020 - Present"
+  repo: https://github.com/h-o-t/entente
+  summary: A convention testing framework for JavaScript/TypeScript.
+  tags: ["hobby", "javascript", "typescript"]
+
+- name: nocuous
+  logo: images/projects/h-o-t.png
+  role: Creator & Maintainer
+  timeline: "July 2019 - Present"
+  repo: https://github.com/h-o-t/nocuous
+  summary: A static code analysis tool for JavaScript and TypeScript.
+  tags: ["hobby", "javascript", "typescript"]
+
+- name: Dojo
+  logo: images/projects/dojo.png
+  role: Project Lead
+  timeline: "August 2015 - December 2017"
+  repo: https://github.com/dojo/framework
+  summary: A Progressive Framework for Modern Web Apps.
+  tags: ["professional", "javascript", "typescript"]

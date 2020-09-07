@@ -1,10 +1,19 @@
 ---
 title: Fanboy
 date: 2017-06-16 20:05:50
+hero: /images/Kit_Anders.JPG
 tags:
 - nerd
 - technology
 comments: true
+author:
+  name: Kitson Kelly
+  image: /images/kpk_512.jpeg
+menu:
+  sidebar:
+    name: Fanboy
+    identifier: fanboy
+    weight: 100
 ---
 
 I got to be a fanboy this week.

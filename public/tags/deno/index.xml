@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>deno on Kitson P. Kelly Blog</title>
+    <link>https://kitsonkelly.com/tags/deno/</link>
+    <description>Recent content in deno on Kitson P. Kelly Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-gb</language>
+    <lastBuildDate>Thu, 28 May 2020 12:00:17 +1000</lastBuildDate>
+    
+	<atom:link href="https://kitsonkelly.com/tags/deno/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Deno is a Browser for Code</title>
+      <link>https://kitsonkelly.com/posts/deno-is-a-browser-for-code/</link>
+      <pubDate>Thu, 28 May 2020 12:00:17 +1000</pubDate>
+      
+      <guid>https://kitsonkelly.com/posts/deno-is-a-browser-for-code/</guid>
+      <description>Explaining the different mental model Deno has about managing dependant code.</description>
+    </item>
+    
+    <item>
+      <title>Bundling in Deno</title>
+      <link>https://kitsonkelly.com/posts/bundling-in-deno/</link>
+      <pubDate>Tue, 10 Dec 2019 09:00:00 +0000</pubDate>
+      
+      <guid>https://kitsonkelly.com/posts/bundling-in-deno/</guid>
+      <description>I&amp;rsquo;ve been working on Deno for a while now, and one of the features I am proud of, which I wanted to share a bit more detail on, is how we do bundling.
+Deno typically does all the heavy lifting for you. Modules are just URLs, so you don&amp;rsquo;t need any special tooling to include modules like a package manager. For example if you wanted to run a static web server, you would only need to do something like this:</description>
+    </item>
+    
+    <item>
+      <title>Experiments with Deno</title>
+      <link>https://kitsonkelly.com/posts/experiments-with-deno/</link>
+      <pubDate>Thu, 31 May 2018 09:18:03 +0000</pubDate>
+      
+      <guid>https://kitsonkelly.com/posts/experiments-with-deno/</guid>
+      <description>I saw the following tweet from Mohsen:
+Creator of Node.js has something cooking here: This is basically Node.js with libuv (and more) swapped with Go IO and network bindings. It has native @typescriptlang support and has a new/better module system https://t.co/oVRlX8vluf
+&amp;mdash; Mohsen Azimi (@mohsen____) May 30, 2018  And I got excited. While a TypeScript runtime was never an objective or goal of TypeScript, there is an argument that having a runtime, especially for a server side application, is better.</description>
+    </item>
+    
+  </channel>
+</rss>

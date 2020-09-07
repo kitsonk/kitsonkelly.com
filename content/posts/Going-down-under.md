@@ -1,10 +1,19 @@
 ---
 title: Going Down Under
 date: 2018-01-03 15:42:39
+hero: /images/Sydney_Fireworks.jpg
 tags:
 - travel
 - Australia
 comments: true
+author:
+  name: Kitson Kelly
+  image: /images/kpk_512.jpeg
+menu:
+  sidebar:
+    name: Going Down Under
+    identifier: australia
+    weight: 200
 ---
 
 After over 11 years of calling the UK my home, Simon and I are moving to Australia.

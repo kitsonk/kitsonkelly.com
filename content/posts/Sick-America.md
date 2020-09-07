@@ -1,10 +1,20 @@
 ---
 title: Sick America
 date: 2017-06-25 16:55:36
+hero: /images/Healthcare.jpg
 tags:
 - politics
 - America
 comments: true
+author:
+  name: Kitson Kelly
+  image: /images/kpk_512.jpeg
+menu:
+  sidebar:
+    name: Sick America
+    identifier: sick-america
+    parent: Politics
+    weight: 200
 ---
 
 Having now lived full time outside of the US for over a decade, in the UK where we have _socialised_ medical care.  A word I was taught from all aspects as _evil_ and _anti-American_.  I can say without a doubt, I would never go back.

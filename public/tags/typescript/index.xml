@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>typescript on Kitson P. Kelly Blog</title>
+    <link>https://kitsonkelly.com/tags/typescript/</link>
+    <description>Recent content in typescript on Kitson P. Kelly Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-gb</language>
+    <lastBuildDate>Thu, 31 May 2018 09:18:03 +0000</lastBuildDate>
+    
+	<atom:link href="https://kitsonkelly.com/tags/typescript/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Experiments with Deno</title>
+      <link>https://kitsonkelly.com/posts/experiments-with-deno/</link>
+      <pubDate>Thu, 31 May 2018 09:18:03 +0000</pubDate>
+      
+      <guid>https://kitsonkelly.com/posts/experiments-with-deno/</guid>
+      <description>I saw the following tweet from Mohsen:
+Creator of Node.js has something cooking here: This is basically Node.js with libuv (and more) swapped with Go IO and network bindings. It has native @typescriptlang support and has a new/better module system https://t.co/oVRlX8vluf
+&amp;mdash; Mohsen Azimi (@mohsen____) May 30, 2018  And I got excited. While a TypeScript runtime was never an objective or goal of TypeScript, there is an argument that having a runtime, especially for a server side application, is better.</description>
+    </item>
+    
+    <item>
+      <title>TSConf 2018</title>
+      <link>https://kitsonkelly.com/posts/tsconf-2018/</link>
+      <pubDate>Tue, 13 Mar 2018 14:28:59 +0000</pubDate>
+      
+      <guid>https://kitsonkelly.com/posts/tsconf-2018/</guid>
+      <description>I got the opportunity to attend TSConf 2018. It was the worlds first focused conference on TypeScript and the lead organiser was my former employer SitePen. We had been batting around a focused conference for an extended period of time, and when Dylan and I visit the TypeScript team about 9 months ago, we figured it was time to pull it together. I wasn&amp;rsquo;t able to stay around to help make it a reality, but I was glad I could attend to see the outcome.</description>
+    </item>
+    
+  </channel>
+</rss>

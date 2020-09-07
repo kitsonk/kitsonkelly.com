@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Posts on Kitson P. Kelly Blog</title>
+    <link>https://kitsonkelly.com/posts/</link>
+    <description>Recent content in Posts on Kitson P. Kelly Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-gb</language>
+    <lastBuildDate>Thu, 28 May 2020 12:00:17 +1000</lastBuildDate>
+    
+	<atom:link href="https://kitsonkelly.com/posts/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Deno is a Browser for Code</title>
+      <link>https://kitsonkelly.com/posts/deno-is-a-browser-for-code/</link>
+      <pubDate>Thu, 28 May 2020 12:00:17 +1000</pubDate>
+      
+      <guid>https://kitsonkelly.com/posts/deno-is-a-browser-for-code/</guid>
+      <description>Explaining the different mental model Deno has about managing dependant code.</description>
+    </item>
+    
+    <item>
+      <title>Bundling in Deno</title>
+      <link>https://kitsonkelly.com/posts/bundling-in-deno/</link>
+      <pubDate>Tue, 10 Dec 2019 09:00:00 +0000</pubDate>
+      
+      <guid>https://kitsonkelly.com/posts/bundling-in-deno/</guid>
+      <description>I&amp;rsquo;ve been working on Deno for a while now, and one of the features I am proud of, which I wanted to share a bit more detail on, is how we do bundling.
+Deno typically does all the heavy lifting for you. Modules are just URLs, so you don&amp;rsquo;t need any special tooling to include modules like a package manager. For example if you wanted to run a static web server, you would only need to do something like this:</description>
+    </item>
+    
+    <item>
+      <title>Experiments with Deno</title>
+      <link>https://kitsonkelly.com/posts/experiments-with-deno/</link>
+      <pubDate>Thu, 31 May 2018 09:18:03 +0000</pubDate>
+      
+      <guid>https://kitsonkelly.com/posts/experiments-with-deno/</guid>
+      <description>I saw the following tweet from Mohsen:
+Creator of Node.js has something cooking here: This is basically Node.js with libuv (and more) swapped with Go IO and network bindings. It has native @typescriptlang support and has a new/better module system https://t.co/oVRlX8vluf
+&amp;mdash; Mohsen Azimi (@mohsen____) May 30, 2018  And I got excited. While a TypeScript runtime was never an objective or goal of TypeScript, there is an argument that having a runtime, especially for a server side application, is better.</description>
+    </item>
+    
+    <item>
+      <title>TSConf 2018</title>
+      <link>https://kitsonkelly.com/posts/tsconf-2018/</link>
+      <pubDate>Tue, 13 Mar 2018 14:28:59 +0000</pubDate>
+      
+      <guid>https://kitsonkelly.com/posts/tsconf-2018/</guid>
+      <description>I got the opportunity to attend TSConf 2018. It was the worlds first focused conference on TypeScript and the lead organiser was my former employer SitePen. We had been batting around a focused conference for an extended period of time, and when Dylan and I visit the TypeScript team about 9 months ago, we figured it was time to pull it together. I wasn&amp;rsquo;t able to stay around to help make it a reality, but I was glad I could attend to see the outcome.</description>
+    </item>
+    
+    <item>
+      <title>Going Down Under</title>
+      <link>https://kitsonkelly.com/posts/going-down-under/</link>
+      <pubDate>Wed, 03 Jan 2018 15:42:39 +0000</pubDate>
+      
+      <guid>https://kitsonkelly.com/posts/going-down-under/</guid>
+      <description>After over 11 years of calling the UK my home, Simon and I are moving to Australia.
+Last year, we traveled for three months and spent about a month in Australia. We really enjoyed our time and met up with a few old friends. We had been considering moving away from the UK for a while now and our experience really solidified our resolve to explore the option.
+Our biggest challenge was getting a visa, as unlike the US, UK and (currently) the rest of the EU, we didn&amp;rsquo;t have a right to live and work.</description>
+    </item>
+    
+    <item>
+      <title>Sick America</title>
+      <link>https://kitsonkelly.com/posts/sick-america/</link>
+      <pubDate>Sun, 25 Jun 2017 16:55:36 +0000</pubDate>
+      
+      <guid>https://kitsonkelly.com/posts/sick-america/</guid>
+      <description>Having now lived full time outside of the US for over a decade, in the UK where we have socialised medical care. A word I was taught from all aspects as evil and anti-American. I can say without a doubt, I would never go back.
+In 1981 in the US, only 8% of families cited medical bills as reasons for their bankruptcy, by 2009, it was estimated that that was 62.</description>
+    </item>
+    
+    <item>
+      <title>Fanboy</title>
+      <link>https://kitsonkelly.com/posts/fanboy/</link>
+      <pubDate>Fri, 16 Jun 2017 20:05:50 +0000</pubDate>
+      
+      <guid>https://kitsonkelly.com/posts/fanboy/</guid>
+      <description>I got to be a fanboy this week.
+It isn&amp;rsquo;t often that you get to meet someone who has their own wikipedia page. Let alone someone who had tangentially had a huge influence in your life. Anders has lived his life blissfully unaware of the impact he has had on mine.
+For those who don&amp;rsquo;t know, Anders is Technical Fellow at Microsoft and is the architect of many modern programming languages.</description>
+    </item>
+    
+    <item>
+      <title>Writing more?</title>
+      <link>https://kitsonkelly.com/posts/writing-more/</link>
+      <pubDate>Sat, 10 Jun 2017 16:41:40 +0000</pubDate>
+      
+      <guid>https://kitsonkelly.com/posts/writing-more/</guid>
+      <description>I am going to try to commit to writing and blogging a bit more. I have had a lot of thoughts bouncing around, and like a lot of things, you get better with practice. So I have converted my homepage over to Hexo which is some of the nicest content management software I have ever worked with. In addition I am using Now Zeit to deploy and host this site.</description>
+    </item>
+    
+  </channel>
+</rss>

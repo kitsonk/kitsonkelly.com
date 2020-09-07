@@ -1,9 +1,20 @@
-+++
-title = "Bundling in Deno"
-date = 2019-12-10T09:00:00Z
-tags = ["deno", "bundling"]
-comments = true
-+++
+---
+title: "Bundling in Deno"
+date: 2019-12-10T09:00:00Z
+tags:
+- deno
+- bundling
+comments: true
+author:
+  name: Kitson Kelly
+  image: /images/kpk_512.jpeg
+menu:
+  sidebar:
+    name: Bundling
+    identifier: deno-bundling
+    parent: Deno
+    weight: 200
+---
 
 I've been working on [Deno](https://deno.land/) for a while now, and one of the features I am proud of, which I wanted to share a bit more detail on, is how we do bundling.
 
@@ -19,7 +30,7 @@ But let's say you are building a server, where you want to distribute the progra
 
 That was the motivation around `deno bundle`, to provide a single JavaScript file with all the dependencies resolved and included in the file.
 
-# ESM
+## ESM
 
 Deno works totally off of ES Modules.  Node.js has a main module format of CommonJS, and only recently allowed loading of ESM without a command line flag.  Evergreen browsers support ESM when you load a JavaScript file via `<script type="module">`, otherwise they are simply treated as global scripts.
 
@@ -31,7 +42,7 @@ Quite a few folks have questioned (and some even (╯°□°)╯︵ ┻━┻) t
 
 So we built and released the MVP for bundling, which required that you utilise some sort of loader script to bootstrap the bundle.  And it worked, and it was something that we could build on.
 
-# Dog fooding
+## Dog fooding
 
 In Deno, there is a lot of JavaScript and TypeScript code that defines the compiler, the runtime environment, and workers.  In order to speed up boot times we use a feature from V8 called "snapshots", where we essentially run JavaScript code into V8, V8 does all the parsing of the code and loads it into memory.  We then take that memory and save it out to disk, and then build that into the `deno` binary.  So instead of having to read a lot of JavaScript, parse it, and allocate objects in memory, Deno just loads that directly into V8.
 
@@ -39,7 +50,7 @@ In order to create these snapshots, we need to create a single JavaScript script
 
 So we effectively ported the `deno bundle` logic into the `deno_typescript` part of Deno, which transpiles our TypeScript and outputs a single bundle for both the compiler and the runtime.  We load these bundles into V8 and then take a snapshot. ([@ry](https://github.com/ry/) did most of this work, while I have done most of the rest of the bundling work)
 
-# Integrating the loader
+## Integrating the loader
 
 The next steps we wanted to take was to integrate a loader directly into the output.  Up to this point, you had to `run` an external loader script, which causes some problems (like messing up arguments available to the workload).  It also isn't as UX friendly.  We wanted to be able to do something like this:
 
@@ -50,7 +61,7 @@ The next steps we wanted to take was to integrate a loader directly into the out
 
 So we integrated the loader into Deno, so when the bundle is output, the loader is inlined and the internalised modules will be instantiated in the same way if we were loading them directly.
 
-# Named exports
+## Named exports
 
 We had a couple users of Deno trying to generate bundles that weren't fully standalone programmes, but were in fact libraries that would be imported into another program.  This meant that not only did we need to generate a file that could be loaded as a valid ES module, but we also needed to ensure it exported the same things the original root module exported.  For example, if I wanted to create a single file library of a web server, which I can distribute and import into my programme, I want to be able to do something like this:
 
@@ -110,7 +121,7 @@ export const HttpError = __rootExports["HttpError"];
 export const composeMiddleware = __rootExports["composeMiddleware"];
 ```
 
-# The future
+## The future
 
 Even shipping the named exports isn't the end of the road for bundling.  We want to be able to emit declaration files for the bundle, along side of the single JavaScript file.  This will make it easier to consume a bundle in a type safe way.
 

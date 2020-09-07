@@ -1,0 +1,707 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Deno is a Browser for Code</title>
+    <meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+
+
+<link rel="stylesheet" href="/assets/css/bootstrap.min.css" />
+<link rel="stylesheet" href="/assets/css/layouts/main.css" />
+<link rel="stylesheet" href="/assets/css/style.css" />
+<link rel="stylesheet" href="/assets/css/navigators/navbar.css" />
+
+
+<link href="https://fonts.googleapis.com/css2?family=Muli:wght@300;400;500;600" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css" />
+
+
+<link rel="icon" type="image/png" href="/assets/images/favicon.png" />
+
+
+<link rel="stylesheet" href="/assets/css/style.css" />
+
+    
+<meta name="description" content="Explaining the different mental model Deno has about managing dependant code." />
+<link
+  rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.1/styles/atom-one-dark.min.css"
+/>
+<link rel="stylesheet" href="/assets/css/layouts/single.css" />
+<link rel="stylesheet" href="/assets/css/navigators/sidebar.css">
+
+
+    
+    
+      
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-42376316-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+    
+  </head>
+
+  <body data-spy="scroll" data-target="#TableOfContents" data-offset="80">
+    <div class="container-fluid bg-dimmed wrapper">
+      
+      
+    <nav class="navbar navbar-expand-xl top-navbar final-navbar shadow">
+  <div class="container">
+    
+    
+    
+      
+    
+    
+      
+    
+      <button class="navbar-toggler navbar-light" id="sidebar-toggler" type="button" onclick="toggleSidebar()">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <a class="navbar-brand" href="https://kitsonkelly.com/">
+      <img src="/images/cactus_logo_black.png">Kitson P. Kelly Blog</a>
+    <button class="navbar-toggler navbar-light" id="toc-toggler" type="button" onclick="toggleTOC()">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="top-nav-items">
+      <ul class="navbar-nav ml-auto">
+      </ul>
+    </div>
+  </div>
+  
+  <img src="/images/cactus_logo_black.png" class="d-none" id="main-logo">
+  <img src="/images/cactus_logo_white.png" class="d-none" id="inverted-logo">
+</nav>
+
+
+
+      
+      
+  <section class="sidebar-section" id="sidebar-section">
+    <div class="sidebar-holder">
+      <div class="sidebar" id="sidebar">
+        <input type="text" value="" placeholder="Search" data-search="" id="search-box" />
+        <div class="sidebar-tree">
+          <ul class="tree" id="tree">
+            <li id="list-heading"><a href="/posts" data-filter="all">Posts</a></li>
+            <div class="subtree">
+                
+  
+  
+  
+  
+  
+    
+    <li><a class="" href="/posts/fanboy/">Fanboy</a></li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li><a class="" href="/posts/going-down-under/">Going Down Under</a></li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li><a class="" href="/posts/tsconf-2018/">TSConf 2018</a></li>
+  
+
+  
+  
+  
+  
+    
+    
+  
+  
+    
+    <li>
+      <i class="fas fa-minus-circle"></i><a class="active" href="">Deno</a>
+      
+      <ul class="active">
+        
+  
+  
+  
+  
+    
+    
+  
+  
+    
+    <li><a class="active" href="/posts/deno-is-a-browser-for-code/">Deno is a Browser for Code</a></li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li><a class="" href="/posts/bundling-in-deno/">Bundling</a></li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li><a class="" href="/posts/experiments-with-deno/">Experiments</a></li>
+  
+
+
+      </ul>
+    </li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li>
+      <i class="fas fa-plus-circle"></i><a class="" href="">Politics</a>
+      
+      <ul class="">
+        
+  
+  
+  
+  
+  
+    
+    <li><a class="" href="/posts/sick-america/">Sick America</a></li>
+  
+
+
+      </ul>
+    </li>
+  
+
+
+            </div>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+      
+      
+<section class="content-section" id="content-section">
+  <div class="content">
+    <div class="container p-0 read-area">
+      
+      <div class="hero-area col-sm-12" id="hero-area" style='background-image: url(https://kitsonkelly.com/images/deno_browser.png);'>
+      </div>
+
+      
+      <div class="page-content">
+        <div class="author-profile ml-auto align-self-lg-center">
+          <img class="rounded-circle" src='/images/kpk_512.jpeg'/>
+          <h5 class="author-name">Kitson Kelly</h5>
+          <p>May 28, 2020</p>
+        </div>
+
+        <div class="title">
+          <h1>Deno is a Browser for Code</h1>
+        </div>
+
+        <div class="post-content" id="post-content">
+          <p>I started contributing to Deno soon after Ry made the prototype visible in
+May 2018. The most frequent question that people have is &ldquo;where is the package
+manager?&rdquo; which often times isn&rsquo;t even in the form of a question. It is
+statements like &ldquo;I thought Deno took security seriously, and just downloading
+resources off the internet is insecure.&rdquo; or &ldquo;How can I possibly manage my
+dependencies?&rdquo;</p>
+<p>In my opinion, we need to shift our mental model. Lots of folks take the
+ubiquity of package managers and centralized code registries as a requirement
+to have a package manager and a centralized code registries. Because they exist
+doesn&rsquo;t mean they are required. They came into existence because they solved
+problems in a particular way, and we have just accepted them as the only way to
+solve that problem. I would argue that isn&rsquo;t true.</p>
+<h2 id="browsers">Browsers</h2>
+<p>In order to publish a website, we don&rsquo;t login to a central Google server, and
+upload our website to the registry. Then if someone wants to view our website,
+they use a command line tool, which adds an entry to our <code>browser.json</code> file on
+our local machine and goes and fetches the whole website, plus any other
+websites that the one website links to to our local <code>websites</code> directory before
+we then fire up our browser to actually look at the website. That would be
+insane, right? So why accept that model for running code?</p>
+<p>The Deno CLI works like a browser, but for code. You import a URL in the code
+and Deno will go and fetch that code and cache it locally, just like a browser.
+Also, like a browser, your code runs in a sandbox, which has zero trust of the
+code you are running, irrespective of the source. You, the person invoking the
+code, get to tell that code what it can and can&rsquo;t do, externally. Also, like a
+browser, code can ask you permission to do things, which you can choose to grant
+or deny.</p>
+<p>The HTTP protocol provides everything that is needed to provide information
+about the code, and Deno tries to fully leverage that protocol, without having
+to create a new protocol.</p>
+<h2 id="discovering-code">Discovering code</h2>
+<p>The first thing to think about is that, like a browser, the Deno CLI doesn&rsquo;t
+want to have any opinions about what code you run. It lays out the rules of how
+code is fetched, and how it sandboxes itself from the machine it runs on. In my
+opinion, that is as much of an opinion a runtime should have.</p>
+<p>In the Node.js/npm ecosystem, we have conflated the management of code on our
+local machine, with a centralized registry of code to help facilitate discovery.
+In my opinion, both have really bad flaws.</p>
+<p>Back in the early days of the internet, we experimented with npm type of
+discoverability. You would go add your website to Yahoo! under the right
+categorization and people would come along, maybe use the search function, but
+it was all structured based on the opinions of those providing the content, not
+really based on optimizing for the needs of the consumer. Eventually along came
+Google. Why did Google win? Because it was useful. It indexed websites in a
+way that matched simple expressions of need (search terms) with the most
+relevant web pages that met that need, looking at multiple factors, including
+meta data provided the content provider as one factor in the mix.</p>
+<p>While we don&rsquo;t have that model quite yet for code for Deno, it is a model that
+works. In addition, we use Google because it solves problems for us, instead of
+being told &ldquo;you must use Google&rdquo;, as well as there are also other viable
+alternatives to Google.</p>
+<p>I got into a bit of a debate with Laurie Voss on twitter, someone who knows a
+fair deal about the npm ecosystem I would say. He argued that Deno needed a
+package manager, and this blog post is a longer winded version of the thoughts
+I wanted to express, but Laurie raised a very valid point.</p>
+<blockquote class="twitter-tweet"><p lang="en" dir="ltr">And yet there all our code is, in the same place, on GitHub, because the problems of maintaining a software ecosystem are social and reputational ones that lead to a centralized system, despite there being no technical requirement that it be that way.</p>&mdash; Laurie Voss (@seldo) <a href="https://twitter.com/seldo/status/1261140647056076801?ref_src=twsrc%5Etfw">May 15, 2020</a></blockquote>
+<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+<p>GitHub has become the home for open source code, because it was useful and
+solved problems, and built on top of the <em>de facto</em> source code versioning tool,
+git. From the Deno CLI perspective, there should be no technical restrictions
+to where you source code from, it is up to the wider eco-system to create and
+evolve ways to make code for Deno discoverable, probably in innovative ways that
+could never have been conceived by those of us creating the CLI.</p>
+<h2 id="repeatable-builds">Repeatable builds</h2>
+<p>In the npm eco-system, this became a problem. Because of the heavy reliance on
+semantic versioning, and the complex dependency graphs that tend to come from
+the Node.js/npm eco-system, having a repeatable build became a real problem.
+Yarn introduced the concept of lock files, of which npm followed suit.</p>
+<p>My personal feeling is it was a bit of the tail wagging the dog, in that the
+behaviours of developers in the eco-system created a problem that then needed
+an imperfect solution to fix it. Any of us that have lived with the eco-system
+for a long time know that the fix to a lot of issues is
+<code>rm -rf node_modules package-lock.json &amp;&amp; npm install</code>.</p>
+<p><img src="https://memegenerator.net/img/instances/75583685/have-you-tried-rm-rf-node-modules-npm-install.jpg" alt=""></p>
+<p>That being said, Deno has two solutions for that. First, is that Deno caches
+modules. That cache can be checked into your source control, and the
+<code>--cached-only</code> flag will ensure that there is not attempts to retrieve remote
+modules. The <code>DENO_DIR</code> environment variable can be used to specify where the
+cache is located to provide further flexibility.</p>
+<p>Second, Deno supports lock files. <code>--lock lock.json --lock-write</code> would write
+out a lock file with hashes of all the dependencies for a given workload. This
+would be used to validate future runs when the <code>--lock lock.json</code> is used.</p>
+<p>There are also a couple other commands that make managing repeatable builds.
+<code>deno cache</code> would resolve all the dependencies for a supplied module and
+populate the Deno cache. <code>deno bundle</code> can be used to generate a single file
+&ldquo;build&rdquo; of a workload which all the dependencies are resolved and included in
+that file, so only that single file is needed for future <code>deno run</code> commands.</p>
+<h2 id="trusting-code">Trusting code</h2>
+<p>This is another area where I think we have a skewed mental model. For whatever
+reason, we put trust in code that is in a centralized registry. We don&rsquo;t even
+think about it. Not only that, we trust that that code has fully vetted all of
+its dependencies and that those are to be trusted to. We do a quick search and
+type in <code>npm install some-random-package</code> and think &ldquo;This is Fine!&rdquo; I argue the
+rich npm package eco-system has lulled is into a sense of complacency.</p>
+<p>To compensate for this laxness and complacency, we implement security monitoring
+software in our tool chains, to analyse our dependencies and the thousands upon
+thousand lines of code to let us know that maybe some of the code is
+exploitable. Corporations setup private registries to host packages that might
+be vetted slightly more than the single public registry.</p>
+<p>It feels like there is an elephant in the room here. The best strategy is we
+shouldn&rsquo;t trust any code. Once we have that established, then opening it back
+up becomes a little be easier. But we are lying to ourselves if we think a
+package manager and a centralised registry solve this problem, or even
+substantially help with this problem. In fact, I argue they make use let our
+guards down. &ldquo;Well it is on npm, if it were bad for me, surely someone would
+take it down.&rdquo;</p>
+<p>Deno in this aspect isn&rsquo;t quite as done as I think it should be, but it is
+starting from a good position. It has zero trust at startup, and provides
+fairly fine grained permissions. One of the things I personally dislike is that
+there is the <code>-A</code> flag, which is basically saying &ldquo;oh yeah allow everything&rdquo;
+which is such an easy thing for a frustrated developer to do instead of figuring
+out what they really need.</p>
+<p>It is also hard to break down those permissions, to say &ldquo;this code can do this,
+but this other code over here can&rsquo;t&rdquo; or when code prompts to escalate privileges
+where is that code coming from. Hopefully we can figure out an easy to use
+mechanism coupled with something that would be effective and performant at
+runtime to try to solve those challenges.</p>
+<p>A recent change though, which is a good one, in my opinion, is that Deno no
+longer allows you to downgrade your imports. If something is imported from
+<code>https://</code> then it can only import from other <code>https://</code> locations. This
+follows the browser model of not being able to downgrade transport. I still
+think longer term it would be good to kill off any remote imports that aren&rsquo;t
+over <code>https://</code>, much like Service Workers require HTTPS, so we will see what
+the future holds.</p>
+<h2 id="dependency-management">Dependency management</h2>
+<p>I think we need to talk frankly about dependencies in the npm ecosystem. To be
+honest, it is broken. An ecosystem that enables
+<a href="https://github.com/juliangruber/isarray/blob/master/index.js">5 lines of code</a>
+to be downloaded and installed
+<a href="https://www.npmjs.com/package/isarray"><em>30 million</em> times a week</a> for code that
+has been in every browser for the last 9 years and never was needed in Node.js
+is a broken ecosystem. This one example, the actual code is 132 bytes, but the
+package size is 3.4kb. The runnable code is 3.8% of the package size. &ldquo;This is
+Fine!&rdquo;</p>
+<p>My opinion is that there are several factors involved in this. A big part of it
+is that we have the model inverted, which I talked about Deno being a browser
+for code. The problem is that this backwards model has infected how we create
+websites. While we don&rsquo;t have a central registry, when we build a website,
+we download all the code we depend up and bake it into something that we load
+up on a server, and then each user downloads a bunch of code to their local
+machine. Some evidence is that only around 10% of that code that is downloaded
+is unique to that site or web application, the rest is all that code we are
+downloading to our development workstation and bundling up. This model being
+broken are some of the problems solutions like
+<a href="https://www.snowpack.dev/">Snowpack</a> are trying to solve.</p>
+<p>Another significant problem is that our dependencies are not coupled with our
+code. We put dependencies in our <code>package.json</code> but if our code actually uses
+that code or not is totally decoupled. While our code expresses what we are
+using out of that other code, it is very loosely coupled to the version of that
+code. That is contained in the <code>package.json</code>, though it has the biggest impact
+on the code we write, because it is the code that is actually consuming the
+dependent code.</p>
+<p>This leads us to the Deno model, which I like to call <em>Deps-in-JS</em>, since all
+the cool kids are doing <em>*-in-JS</em> things. Explicitly stating our external
+dependencies as URLs means that the code depends upon the other code is concise
+and clear, and our code and dependencies are tightly coupled together. If you
+want to see that dependency graph, you simply need to use <code>deno info</code> with a
+local or remote module:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">$ deno info https://deno.land/x/oak/examples/server.ts
+local: $deno/deps/https/deno.land/d355242ae8430f3116c34165bdae5c156dca21aeef521e45acb51fcd21c9f724
+type: TypeScript
+compiled: $deno/gen/https/deno.land/x/oak/examples/server.ts.js
+map: $deno/gen/https/deno.land/x/oak/examples/server.ts.js.map
+deps:
+https://deno.land/x/oak/examples/server.ts
+  ├── https://deno.land/std@0.53.0/fmt/colors.ts
+  └─┬ https://deno.land/x/oak/mod.ts
+    ├─┬ https://deno.land/x/oak/application.ts
+    │ ├─┬ https://deno.land/x/oak/context.ts
+    │ │ ├── https://deno.land/x/oak/cookies.ts
+    │ │ ├─┬ https://deno.land/x/oak/httpError.ts
+    │ │ │ └─┬ https://deno.land/x/oak/deps.ts
+    │ │ │   ├── https://deno.land/std@0.53.0/hash/sha256.ts
+    │ │ │   ├─┬ https://deno.land/std@0.53.0/http/server.ts
+    │ │ │   │ ├── https://deno.land/std@0.53.0/encoding/utf8.ts
+    │ │ │   │ ├─┬ https://deno.land/std@0.53.0/io/bufio.ts
+    │ │ │   │ │ ├─┬ https://deno.land/std@0.53.0/io/util.ts
+--snip--
+</code></pre></div><p>Deno has no strong opinions around &ldquo;versions&rdquo; of code. A URL is a URL is a URL.
+While Deno requires an appropriate media type in order to understand how to
+treat code, all the &ldquo;opinions&rdquo; about what code to serve up is left up to the
+web server. A server can implement semantic versioning to its hearts content,
+or do any sort of &ldquo;magical&rdquo; mapping of URLs to resources it wants. Deno doesn&rsquo;t
+care. For example <code>https://deno.land/x/</code> is effectively nothing but a URL
+redirect server, where it rewrites URLs to include a git commit-ish reference
+in the redirected URL. So <code>https://deno.land/x/oak@v4.0.0/mod.ts</code> becomes
+<code>https://raw.githubusercontent.com/oakserver/oak/v4.0.0/mod.ts</code>, which GitHub
+serves up a nice versioned module.</p>
+<p>Of course spreading &ldquo;versioned&rdquo; remote URLs throughout your codebase doesn&rsquo;t
+make a lot of sense, so don&rsquo;t do that. The great thing about the dependencies
+just being code though is that you can structure them any way you want to. A
+common convention is to use a <code>deps.ts</code> which re-exports all the dependencies
+you might want. Take a look at the one for
+<a href="https://deno.land/x/oak@v4.0.0/deps.ts">oak server</a>:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ts" data-lang="ts"><span style="color:#75715e">// Copyright 2018-2020 the oak authors. All rights reserved. MIT license.
+</span><span style="color:#75715e"></span>
+<span style="color:#75715e">// This file contains the external dependencies that oak depends upon
+</span><span style="color:#75715e"></span>
+<span style="color:#75715e">// `std` dependencies
+</span><span style="color:#75715e"></span>
+<span style="color:#66d9ef">export</span> { <span style="color:#a6e22e">HmacSha256</span> } <span style="color:#a6e22e">from</span> <span style="color:#e6db74">&#34;https://deno.land/std@0.51.0/hash/sha256.ts&#34;</span>;
+<span style="color:#66d9ef">export</span> {
+  <span style="color:#a6e22e">Response</span>,
+  <span style="color:#a6e22e">serve</span>,
+  <span style="color:#a6e22e">Server</span>,
+  <span style="color:#a6e22e">ServerRequest</span>,
+  <span style="color:#a6e22e">serveTLS</span>,
+} <span style="color:#a6e22e">from</span> <span style="color:#e6db74">&#34;https://deno.land/std@0.51.0/http/server.ts&#34;</span>;
+<span style="color:#66d9ef">export</span> {
+  <span style="color:#a6e22e">Status</span>,
+  <span style="color:#a6e22e">STATUS_TEXT</span>,
+} <span style="color:#a6e22e">from</span> <span style="color:#e6db74">&#34;https://deno.land/std@0.51.0/http/http_status.ts&#34;</span>;
+<span style="color:#66d9ef">export</span> {
+  <span style="color:#a6e22e">Cookies</span>,
+  <span style="color:#a6e22e">Cookie</span>,
+  <span style="color:#a6e22e">setCookie</span>,
+  <span style="color:#a6e22e">getCookies</span>,
+  <span style="color:#a6e22e">delCookie</span>,
+} <span style="color:#a6e22e">from</span> <span style="color:#e6db74">&#34;https://deno.land/std@0.51.0/http/cookie.ts&#34;</span>;
+<span style="color:#66d9ef">export</span> {
+  <span style="color:#a6e22e">basename</span>,
+  <span style="color:#a6e22e">extname</span>,
+  <span style="color:#a6e22e">join</span>,
+  <span style="color:#a6e22e">isAbsolute</span>,
+  <span style="color:#a6e22e">normalize</span>,
+  <span style="color:#a6e22e">parse</span>,
+  <span style="color:#a6e22e">resolve</span>,
+  <span style="color:#a6e22e">sep</span>,
+} <span style="color:#a6e22e">from</span> <span style="color:#e6db74">&#34;https://deno.land/std@0.51.0/path/mod.ts&#34;</span>;
+<span style="color:#66d9ef">export</span> { <span style="color:#a6e22e">assert</span> } <span style="color:#a6e22e">from</span> <span style="color:#e6db74">&#34;https://deno.land/std@0.51.0/testing/asserts.ts&#34;</span>;
+
+<span style="color:#75715e">// 3rd party dependencies
+</span><span style="color:#75715e"></span>
+<span style="color:#66d9ef">export</span> {
+  <span style="color:#a6e22e">contentType</span>,
+  <span style="color:#a6e22e">lookup</span>,
+} <span style="color:#a6e22e">from</span> <span style="color:#e6db74">&#34;https://deno.land/x/media_types@v2.3.1/mod.ts&#34;</span>;
+</code></pre></div><p>I created oak server and maintained for 18 months through about 40 releases of
+Deno and the Deno <code>std</code> library, including moving of <code>media_types</code> from internal
+to oak, out to the <code>std</code> library, to only have it be &ldquo;ejected&rdquo; from the <code>std</code>
+library to be its own thing. Not once did I think to myself &ldquo;hey, I need a
+package manager to manage this for me&rdquo;.</p>
+<p>One of the benefits of TypeScript is that you can get comprehensive validation
+of compatibility of your code with other code. If your dependencies are &ldquo;raw&rdquo;
+TypeScript written for Deno, this is great, but let&rsquo;s say that you want to take
+advantage of pre-processing of the TypeScript to JavaScript, but still have the
+ability to consume that remote code safely. Deno supports a couple different
+ways to allow that to happen, but the most seamless is the support for the
+<code>X-TypeScript-Types</code> header. This header indicates to Deno where a types file
+is located which can be used when type checking the JavaScript file that you
+are depending upon. <a href="https://pika.dev/cdn">Pika CDN</a> supports this. Any
+packages that are available on the CDN that have types associated with them will
+serve up that header and Deno will also fetch those types and use that when
+type checking the file.</p>
+<p>All this being said, there may still be a need to &ldquo;remap&rdquo; a remote (or local)
+dependency to what is expressed in the code. In this case, the unstable
+implementation of <a href="https://github.com/WICG/import-maps">import-maps</a> can be
+used. It is a proposal specification that is part of the W3C incubator where
+browser standards come out of. It allows a map to be provided which will map
+a particular dependency in code to another resource, be it a local file or a
+remote module.</p>
+<p>We had it implemented in Deno for an extended period of time, as we had really
+hoped that it would become adopted widely. Sadly, it was only an
+<a href="https://chromestatus.com/feature/5315286962012160">origin trial in Chrome</a> and
+hasn&rsquo;t gotten wider adoption yet. This led us to putting it behind the
+<code>--unstable</code> flag for Deno 1.0. My personal opinion is that it is still a big
+risk of being a dead end, and should be avoided.</p>
+<h2 id="but-but-but">But, but, but&hellip;</h2>
+<p>I suspect a lot of people are still coming with a list of objections to the
+model that Deno has. I think the strategy Deno has tried to take, which I am
+very aligned to, is to deal with real problems when they arise. A lot of the
+objections I hear are from people who are new to Deno, who haven&rsquo;t worked with
+it, who haven&rsquo;t tried to understand that there might be a different way.</p>
+<p>All that being said, if we collectively run into a problem and there is a
+compelling need to change something in the Deno CLI, I am confident that it will
+happen, but a lot of problems simply don&rsquo;t exist, or there are other ways to
+solve them that don&rsquo;t require your runtime to have strong opinions or be coupled
+to an external programme to manage your code.</p>
+<p>So my challenge to you is, flirt a bit with not having a package manager or
+a centralised package repository and see how it goes. You might never go back!</p>
+
+        </div>
+
+        
+        
+          <div class="btn-improve-page">
+              <a href="https://github.com/kitsonk/kitsonkelly.com/edit/master/content/posts/Deno-is-a-browser-for-code.md">
+                <i class="fas fa-code-branch"></i>
+                Improve This Page
+              </a>
+          </div>
+        
+
+        
+      <hr />
+        <div class="row next-prev-navigator">
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+      
+        
+        
+        <div class="col-md-12 next-article">
+          <a href="/posts/bundling-in-deno/" class="btn btn-outline-info">
+            <span>Next <i class="fas fa-chevron-circle-right"></i></span>
+            <br />
+            <span>Bundling in Deno</span>
+          </a>
+        </div>
+      
+    
+  
+
+</div>
+
+      <hr />
+      
+      
+          <div id="disqus_thread"></div>
+<script type="text/javascript">
+  (function () {
+    
+    
+    if (window.location.hostname == "localhost") return;
+
+    var dsq = document.createElement("script");
+    dsq.type = "text/javascript";
+    dsq.async = true;
+    var disqus_shortname = "kitsonkelly";
+    dsq.src = "//" + disqus_shortname + ".disqus.com/embed.js";
+    (
+      document.getElementsByTagName("head")[0] ||
+      document.getElementsByTagName("body")[0]
+    ).appendChild(dsq);
+  })();
+</script>
+<noscript
+  >Please enable JavaScript to view the
+  <a href="https://disqus.com/?ref_noscript"
+    >comments powered by Disqus.</a
+  ></noscript
+>
+<a href="https://disqus.com/" class="dsq-brlink"
+  >comments powered by <span class="logo-disqus">Disqus</span></a
+>
+
+      
+      </div>
+    </div>
+  </div>
+</section>
+
+
+      
+      
+  <section class="toc-section" id="toc-section">
+    
+    <div class="toc-holder">
+      <h5 class="text-center pl-3">Table of Contents</h5>
+      <hr>
+      <div class="toc">
+        <nav id="TableOfContents">
+  <ul>
+    <li><a href="#browsers">Browsers</a></li>
+    <li><a href="#discovering-code">Discovering code</a></li>
+    <li><a href="#repeatable-builds">Repeatable builds</a></li>
+    <li><a href="#trusting-code">Trusting code</a></li>
+    <li><a href="#dependency-management">Dependency management</a></li>
+    <li><a href="#but-but-but">But, but, but&hellip;</a></li>
+  </ul>
+</nav>
+      </div>
+    </div>
+    
+  </section>
+
+    </div>
+
+    <footer class="container-fluid text-center align-content-center footer pb-2">
+  <div class="container pt-5">
+    <div class="row text-left">
+      <div class="col-md-4 col-sm-12">
+        <h5>Navigation</h5>
+        
+        <ul>
+            
+            <li class="nav-item">
+              <a class="smooth-scroll" href="/#about">About</a>
+            </li>
+            
+            
+            <li class="nav-item">
+              <a class="smooth-scroll" href="/#recent-posts">Recent Posts</a>
+            </li>
+            
+            
+            <li class="nav-item">
+              <a class="smooth-scroll" href="/#projects">Projects</a>
+            </li>
+            
+            
+            <li class="nav-item">
+              <a class="smooth-scroll" href="/#experiences">Experiences</a>
+            </li>
+            
+        </ul>
+        
+
+      </div>
+      <div class="col-md-4 col-sm-12">
+        <h5>Contact Me</h5>
+        <ul>
+          
+          <li><span>Email: </span> <span>me@kitsonkelly.com</span></li>
+          
+        </ul>
+      </div>
+      
+    </div>
+  </div>
+  <hr />
+  <div class="container">
+    <div class="row text-left">
+      <div class="col-md-4">
+        <a id="theme" href="https://github.com/hossainemruz/toha" target="#">
+          <img src="/assets/images/inverted-logo.png">
+          Toha
+        </a>
+      </div>
+      <div class="col-md-4 text-center">© 2017-2020 Kitson P. Kelly.</div>
+      <div class="col-md-4 text-right">
+        <a id="hugo" href="https://gohugo.io/">Powered by Hugo
+        <img
+          src="/assets/images/hugo-logo-wide.svg"
+          alt="Hugo Logo"
+          height="18"
+        />
+        </a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+    <script src="/assets/js/jquery-3.4.1.min.js"></script>
+<script src="/assets/js/bootstrap.min.js"></script>
+
+<script src="/assets/js/navbar.js"></script>
+<script src="/assets/js/main.js"></script>
+
+
+    
+    
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.1/highlight.min.js"></script>
+<script src="/assets/js/single.js"></script>
+<script>
+  hljs.initHighlightingOnLoad();
+</script>
+
+
+  </body>
+</html>

@@ -5,6 +5,7 @@ description: Explaining the different mental model Deno has about managing
 date: 2020-05-28T12:00:17+10:00
 comments: true
 toc: false
+hero: /images/deno_browser.png
 images:
   - /images/deno_browser.png
 summary: Explaining the different mental model Deno has about managing
@@ -13,6 +14,15 @@ tags:
   - deno
   - package manager
   - registry
+author:
+  name: Kitson Kelly
+  image: /images/kpk_512.jpeg
+menu:
+  sidebar:
+    name: Deno is a Browser for Code
+    identifier: deni-is-a-browser-for-code
+    parent: Deno
+    weight: 100
 ---
 
 I started contributing to Deno soon after Ry made the prototype visible in

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>conference on Kitson P. Kelly Blog</title>
+    <link>https://kitsonkelly.com/tags/conference/</link>
+    <description>Recent content in conference on Kitson P. Kelly Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-gb</language>
+    <lastBuildDate>Tue, 13 Mar 2018 14:28:59 +0000</lastBuildDate>
+    
+	<atom:link href="https://kitsonkelly.com/tags/conference/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>TSConf 2018</title>
+      <link>https://kitsonkelly.com/posts/tsconf-2018/</link>
+      <pubDate>Tue, 13 Mar 2018 14:28:59 +0000</pubDate>
+      
+      <guid>https://kitsonkelly.com/posts/tsconf-2018/</guid>
+      <description>I got the opportunity to attend TSConf 2018. It was the worlds first focused conference on TypeScript and the lead organiser was my former employer SitePen. We had been batting around a focused conference for an extended period of time, and when Dylan and I visit the TypeScript team about 9 months ago, we figured it was time to pull it together. I wasn&amp;rsquo;t able to stay around to help make it a reality, but I was glad I could attend to see the outcome.</description>
+    </item>
+    
+  </channel>
+</rss>

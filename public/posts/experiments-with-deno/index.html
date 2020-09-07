@@ -1,0 +1,506 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Experiments with Deno</title>
+    <meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+
+
+<link rel="stylesheet" href="/assets/css/bootstrap.min.css" />
+<link rel="stylesheet" href="/assets/css/layouts/main.css" />
+<link rel="stylesheet" href="/assets/css/style.css" />
+<link rel="stylesheet" href="/assets/css/navigators/navbar.css" />
+
+
+<link href="https://fonts.googleapis.com/css2?family=Muli:wght@300;400;500;600" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css" />
+
+
+<link rel="icon" type="image/png" href="/assets/images/favicon.png" />
+
+
+<link rel="stylesheet" href="/assets/css/style.css" />
+
+    
+<meta name="description" content="Experiments with Deno" />
+<link
+  rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.1/styles/atom-one-dark.min.css"
+/>
+<link rel="stylesheet" href="/assets/css/layouts/single.css" />
+<link rel="stylesheet" href="/assets/css/navigators/sidebar.css">
+
+
+    
+    
+      
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-42376316-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+    
+  </head>
+
+  <body data-spy="scroll" data-target="#TableOfContents" data-offset="80">
+    <div class="container-fluid bg-dimmed wrapper">
+      
+      
+    <nav class="navbar navbar-expand-xl top-navbar final-navbar shadow">
+  <div class="container">
+    
+    
+    
+      
+    
+    
+      
+    
+      <button class="navbar-toggler navbar-light" id="sidebar-toggler" type="button" onclick="toggleSidebar()">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <a class="navbar-brand" href="https://kitsonkelly.com/">
+      <img src="/images/cactus_logo_black.png">Kitson P. Kelly Blog</a>
+    <button class="navbar-toggler navbar-light" id="toc-toggler" type="button" onclick="toggleTOC()">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="top-nav-items">
+      <ul class="navbar-nav ml-auto">
+      </ul>
+    </div>
+  </div>
+  
+  <img src="/images/cactus_logo_black.png" class="d-none" id="main-logo">
+  <img src="/images/cactus_logo_white.png" class="d-none" id="inverted-logo">
+</nav>
+
+
+
+      
+      
+  <section class="sidebar-section" id="sidebar-section">
+    <div class="sidebar-holder">
+      <div class="sidebar" id="sidebar">
+        <input type="text" value="" placeholder="Search" data-search="" id="search-box" />
+        <div class="sidebar-tree">
+          <ul class="tree" id="tree">
+            <li id="list-heading"><a href="/posts" data-filter="all">Posts</a></li>
+            <div class="subtree">
+                
+  
+  
+  
+  
+  
+    
+    <li><a class="" href="/posts/fanboy/">Fanboy</a></li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li><a class="" href="/posts/going-down-under/">Going Down Under</a></li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li><a class="" href="/posts/tsconf-2018/">TSConf 2018</a></li>
+  
+
+  
+  
+  
+  
+    
+    
+  
+  
+    
+    <li>
+      <i class="fas fa-minus-circle"></i><a class="active" href="">Deno</a>
+      
+      <ul class="active">
+        
+  
+  
+  
+  
+  
+    
+    <li><a class="" href="/posts/deno-is-a-browser-for-code/">Deno is a Browser for Code</a></li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li><a class="" href="/posts/bundling-in-deno/">Bundling</a></li>
+  
+
+  
+  
+  
+  
+    
+    
+  
+  
+    
+    <li><a class="active" href="/posts/experiments-with-deno/">Experiments</a></li>
+  
+
+
+      </ul>
+    </li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li>
+      <i class="fas fa-plus-circle"></i><a class="" href="">Politics</a>
+      
+      <ul class="">
+        
+  
+  
+  
+  
+  
+    
+    <li><a class="" href="/posts/sick-america/">Sick America</a></li>
+  
+
+
+      </ul>
+    </li>
+  
+
+
+            </div>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+      
+      
+<section class="content-section" id="content-section">
+  <div class="content">
+    <div class="container p-0 read-area">
+      
+      <div class="hero-area col-sm-12" id="hero-area" style='background-image: url(https://kitsonkelly.com/assets/images/default-hero.jpg);'>
+      </div>
+
+      
+      <div class="page-content">
+        <div class="author-profile ml-auto align-self-lg-center">
+          <img class="rounded-circle" src='/images/kpk_512.jpeg'/>
+          <h5 class="author-name">Kitson Kelly</h5>
+          <p>May 31, 2018</p>
+        </div>
+
+        <div class="title">
+          <h1>Experiments with Deno</h1>
+        </div>
+
+        <div class="post-content" id="post-content">
+          <p>I saw the following tweet from Mohsen:</p>
+<blockquote class="twitter-tweet"><p lang="en" dir="ltr">Creator of Node.js has something cooking here: <br><br>This is basically Node.js with libuv (and more) swapped with Go IO and network bindings. It has native <a href="https://twitter.com/typescriptlang?ref_src=twsrc%5Etfw">@typescriptlang</a> support and has a new/better module system <a href="https://t.co/oVRlX8vluf">https://t.co/oVRlX8vluf</a></p>&mdash; Mohsen Azimi (@mohsen____) <a href="https://twitter.com/mohsen____/status/1001901925015719938?ref_src=twsrc%5Etfw">May 30, 2018</a></blockquote>
+<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+<p>And I got excited.  While a TypeScript runtime was never an objective or goal of TypeScript, there is an argument that having a runtime, especially for a server side application, is better.</p>
+<p>Also, I was recently having a debate with some of my co-workers about how Ryan had stopped contributing to NodeJS because he felt that Go was a better language for creating server side applications.  While I can honestly respect that, seeing him provide a runtime for TypeScript indicates that the ubiquity of JavaScript and TypeScript is hard to deny.</p>
+<p>So I was really excited to see if I could get it running.</p>
+<h2 id="installation-on-osx">Installation on OSX</h2>
+<p>This is essentially take from the current version of the <a href="https://github.com/ry/deno/blob/c0cc240810f9280ca458c54b4cb69acc30e47e27/README.md#compile-instructions">readme</a> and modified for common OSX environments.  I have assumed that you have <a href="https://brew.sh/">Homebrew</a> installed and available as well as the latest full version of XCode with current XCode command line tools.</p>
+<p>First you will need Yarn, Go and Protobuf v3:</p>
+<pre><code>$ brew install yarn
+$ brew install go
+$ brew install protobuf
+</code></pre><p>You should setup a <code>$GOPATH</code> environment variable.  go will default to <code>$HOME/go</code> if there is no path specified, but that is what I would recommend setting it to anyways.  You also need <code>$GOPATH/bin</code> as part of your <code>$PATH</code>.</p>
+<p>Then you need <code>protoc-gen-go</code> and <code>go-bindata</code>:</p>
+<pre><code>$ go get -u github.com/golang/protobuf/protoc-gen-go
+$ go get -u github.com/jteeuwen/go-bindata/...
+</code></pre><p>You need to get and build <code>v8worker2</code>. It takes about 30 minutes to build:</p>
+<pre><code>$ go get -u github.com/ry/v8worker2
+</code></pre><p>I got the following error when doing the above, which is expected, because the build is not able to be done by <code>go get</code>:</p>
+<pre><code># pkg-config --cflags v8.pc
+Failed to open 'v8.pc': No such file or directory
+No package 'v8.pc' found
+pkg-config: exit status 1
+</code></pre><p>You then can do the following:</p>
+<pre><code>$ cd $GOPATH/src/github.com/ry/v8worker2
+$ ./build.py --use_ccache
+</code></pre><p>Finally you can get <code>deno</code> and its other Go deps.</p>
+<pre><code>$ go get -u github.com/ry/deno/...
+</code></pre><pre><code>$ cd $GOPATH/src/github.com/ry/deno
+$ make
+</code></pre><p>Once it has built, you can validate it is working:</p>
+<pre><code>$ ./deno testdata/001_hello.js
+Hello World
+</code></pre><p>I then created a symbolic link of <code>deno</code> to <code>$GOPATH/bin</code> so that it was then available in my path.</p>
+<h2 id="experimenting">Experimenting</h2>
+<p>Once I got it running, I was like <em>WOAH!</em> this is crazy.  I fired up <a href="https://code.visualstudio.com/">Visual Studio Code</a> and started with a minimal <code>tsconfig.json</code> just to ensure that the editor was doing the right thing:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json">{
+    <span style="color:#f92672">&#34;compilerOptions&#34;</span>: {
+        <span style="color:#f92672">&#34;target&#34;</span>: <span style="color:#e6db74">&#34;es2017&#34;</span>,
+        <span style="color:#f92672">&#34;types&#34;</span>: [
+            <span style="color:#e6db74">&#34;./deno&#34;</span>
+        ]
+    },
+    <span style="color:#f92672">&#34;files&#34;</span>: [
+        <span style="color:#e6db74">&#34;./index.ts&#34;</span>
+    ]
+}
+</code></pre></div><p>There is a very limited set of APIs above what v8 provides.  But to ensure vscode understood what was available, I copied over the <a href="https://github.com/ry/deno/blob/master/deno.d.ts">deno.d.ts</a> and added it to the <code>types</code> in the config.</p>
+<p>To access this minimal API, you simply import it then as a module, all in ES6 format:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ts" data-lang="ts"><span style="color:#66d9ef">import</span> <span style="color:#f92672">*</span> <span style="color:#66d9ef">as</span> <span style="color:#a6e22e">deno</span> <span style="color:#a6e22e">from</span> <span style="color:#e6db74">&#39;deno&#39;</span>;
+</code></pre></div><p>I wanted to try these APIs, just to see if I could do something interesting.  There is the <code>readFileSync</code> API, which returns a <code>Uint8Array</code>.  So I created two little functions to provide reading text and JSON into code:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ts" data-lang="ts"><span style="color:#66d9ef">export</span> <span style="color:#66d9ef">function</span> <span style="color:#a6e22e">readTextSync</span>(<span style="color:#a6e22e">filename</span>: <span style="color:#66d9ef">string</span>)<span style="color:#f92672">:</span> <span style="color:#66d9ef">string</span> {
+    <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">TextDecoder</span>(<span style="color:#e6db74">&#39;utf-8&#39;</span>).<span style="color:#a6e22e">decode</span>(<span style="color:#a6e22e">deno</span>.<span style="color:#a6e22e">readFileSync</span>(<span style="color:#a6e22e">filename</span>));
+}
+
+<span style="color:#66d9ef">export</span> <span style="color:#66d9ef">function</span> <span style="color:#a6e22e">readJsonSync</span>&lt;<span style="color:#f92672">T</span>&gt;(<span style="color:#a6e22e">filename</span>: <span style="color:#66d9ef">string</span>)<span style="color:#f92672">:</span> <span style="color:#a6e22e">T</span> {
+    <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">JSON</span>.<span style="color:#a6e22e">parse</span>(<span style="color:#a6e22e">readTextSync</span>(<span style="color:#a6e22e">filename</span>));
+}
+</code></pre></div><p>The simple fact that the code I was editing, in TypeScript syntax, was actually going to be run, was a little mind boggling, but I liked it.  If you do have a TypeScript syntax error, <code>deno</code> will pretty print out the error message for you:</p>
+<pre><code>/deno-experiments/index.ts:7:43 - error TS2304: Cannot find name 'Foo'.
+
+7 export function readJsonSync&lt;T&gt;(filename: Foo): T {
+                                            ~~~
+</code></pre><p>And if you are using vscode, Cmd/Ctrl clicking on the position in the console will take you right to the code (which was also red in vscode).</p>
+<p>So I created a <code>test.json</code> file and read it in and logged it to the console.  Worked like a charm.  I added a few other TypeScript only things, like interfaces, and was loving that there was no transpile steps.</p>
+<p>Anyways, I made my experiments available on GitHub at <a href="https://github.com/kitsonk/deno-experiments">kitsonk/deno-experiments</a>.</p>
+<h2 id="conclusions">Conclusions</h2>
+<p>I am going to keep a close eye on <code>deno</code>.  It could be really innovative, providing a runtime environment with first-tier TypeScript support.  There is a lot more I would want to do/understand, like how <code>deno</code> feeds TypeScript its configuration and what the plan is for local package management for things like <code>@types</code>.  Overall though, it is super interesting.</p>
+
+        </div>
+
+        
+        
+          <div class="btn-improve-page">
+              <a href="https://github.com/kitsonk/kitsonkelly.com/edit/master/content/posts/Experiments-with-Deno.md">
+                <i class="fas fa-code-branch"></i>
+                Improve This Page
+              </a>
+          </div>
+        
+
+        
+      <hr />
+        <div class="row next-prev-navigator">
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+      
+      <div class="col-md-6 previous-article">
+        <a href="/posts/bundling-in-deno/" class="btn btn-outline-info">
+          <span><i class="fas fa-chevron-circle-left"></i> Prev</span>
+          <br />
+          <span>Bundling in Deno</span>
+        </a>
+      </div>
+      
+    
+    
+      
+        
+        
+          
+              
+          
+        
+        <div class="col-md-6 next-article">
+          <a href="/posts/tsconf-2018/" class="btn btn-outline-info">
+            <span>Next <i class="fas fa-chevron-circle-right"></i></span>
+            <br />
+            <span>TSConf 2018</span>
+          </a>
+        </div>
+      
+    
+  
+
+  
+
+  
+
+</div>
+
+      <hr />
+      
+      
+          <div id="disqus_thread"></div>
+<script type="text/javascript">
+  (function () {
+    
+    
+    if (window.location.hostname == "localhost") return;
+
+    var dsq = document.createElement("script");
+    dsq.type = "text/javascript";
+    dsq.async = true;
+    var disqus_shortname = "kitsonkelly";
+    dsq.src = "//" + disqus_shortname + ".disqus.com/embed.js";
+    (
+      document.getElementsByTagName("head")[0] ||
+      document.getElementsByTagName("body")[0]
+    ).appendChild(dsq);
+  })();
+</script>
+<noscript
+  >Please enable JavaScript to view the
+  <a href="https://disqus.com/?ref_noscript"
+    >comments powered by Disqus.</a
+  ></noscript
+>
+<a href="https://disqus.com/" class="dsq-brlink"
+  >comments powered by <span class="logo-disqus">Disqus</span></a
+>
+
+      
+      </div>
+    </div>
+  </div>
+</section>
+
+
+      
+      
+  <section class="toc-section" id="toc-section">
+    
+    <div class="toc-holder">
+      <h5 class="text-center pl-3">Table of Contents</h5>
+      <hr>
+      <div class="toc">
+        <nav id="TableOfContents">
+  <ul>
+    <li><a href="#installation-on-osx">Installation on OSX</a></li>
+    <li><a href="#experimenting">Experimenting</a></li>
+    <li><a href="#conclusions">Conclusions</a></li>
+  </ul>
+</nav>
+      </div>
+    </div>
+    
+  </section>
+
+    </div>
+
+    <footer class="container-fluid text-center align-content-center footer pb-2">
+  <div class="container pt-5">
+    <div class="row text-left">
+      <div class="col-md-4 col-sm-12">
+        <h5>Navigation</h5>
+        
+        <ul>
+            
+            <li class="nav-item">
+              <a class="smooth-scroll" href="/#about">About</a>
+            </li>
+            
+            
+            <li class="nav-item">
+              <a class="smooth-scroll" href="/#recent-posts">Recent Posts</a>
+            </li>
+            
+            
+            <li class="nav-item">
+              <a class="smooth-scroll" href="/#projects">Projects</a>
+            </li>
+            
+            
+            <li class="nav-item">
+              <a class="smooth-scroll" href="/#experiences">Experiences</a>
+            </li>
+            
+        </ul>
+        
+
+      </div>
+      <div class="col-md-4 col-sm-12">
+        <h5>Contact Me</h5>
+        <ul>
+          
+          <li><span>Email: </span> <span>me@kitsonkelly.com</span></li>
+          
+        </ul>
+      </div>
+      
+    </div>
+  </div>
+  <hr />
+  <div class="container">
+    <div class="row text-left">
+      <div class="col-md-4">
+        <a id="theme" href="https://github.com/hossainemruz/toha" target="#">
+          <img src="/assets/images/inverted-logo.png">
+          Toha
+        </a>
+      </div>
+      <div class="col-md-4 text-center">© 2017-2020 Kitson P. Kelly.</div>
+      <div class="col-md-4 text-right">
+        <a id="hugo" href="https://gohugo.io/">Powered by Hugo
+        <img
+          src="/assets/images/hugo-logo-wide.svg"
+          alt="Hugo Logo"
+          height="18"
+        />
+        </a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+    <script src="/assets/js/jquery-3.4.1.min.js"></script>
+<script src="/assets/js/bootstrap.min.js"></script>
+
+<script src="/assets/js/navbar.js"></script>
+<script src="/assets/js/main.js"></script>
+
+
+    
+    
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.1/highlight.min.js"></script>
+<script src="/assets/js/single.js"></script>
+<script>
+  hljs.initHighlightingOnLoad();
+</script>
+
+
+  </body>
+</html>

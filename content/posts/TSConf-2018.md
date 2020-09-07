@@ -1,11 +1,20 @@
 ---
 title: TSConf 2018
 date: 2018-03-13 14:28:59
+hero: /images/TSConf_Sign.jpg
 tags:
 - conference
 - technology
 - TypeScript
 comments: true
+author:
+  name: Kitson Kelly
+  image: /images/kpk_512.jpeg
+menu:
+  sidebar:
+    name: TSConf 2018
+    identifier: tsconf-2018
+    weight: 300
 ---
 
 I got the opportunity to attend [TSConf 2018](https://tsconf.io). It was the worlds first focused conference on TypeScript and the lead organiser was my former employer [SitePen](https://sitepen.com). We had been batting around a focused conference for an extended period of time, and when Dylan and I visit the TypeScript team about 9 months ago, we figured it was time to pull it together. I wasn't able to stay around to help make it a reality, but I was glad I could attend to see the outcome.

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>technology on Kitson P. Kelly Blog</title>
+    <link>https://kitsonkelly.com/tags/technology/</link>
+    <description>Recent content in technology on Kitson P. Kelly Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-gb</language>
+    <lastBuildDate>Tue, 13 Mar 2018 14:28:59 +0000</lastBuildDate>
+    
+	<atom:link href="https://kitsonkelly.com/tags/technology/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>TSConf 2018</title>
+      <link>https://kitsonkelly.com/posts/tsconf-2018/</link>
+      <pubDate>Tue, 13 Mar 2018 14:28:59 +0000</pubDate>
+      
+      <guid>https://kitsonkelly.com/posts/tsconf-2018/</guid>
+      <description>I got the opportunity to attend TSConf 2018. It was the worlds first focused conference on TypeScript and the lead organiser was my former employer SitePen. We had been batting around a focused conference for an extended period of time, and when Dylan and I visit the TypeScript team about 9 months ago, we figured it was time to pull it together. I wasn&amp;rsquo;t able to stay around to help make it a reality, but I was glad I could attend to see the outcome.</description>
+    </item>
+    
+    <item>
+      <title>Fanboy</title>
+      <link>https://kitsonkelly.com/posts/fanboy/</link>
+      <pubDate>Fri, 16 Jun 2017 20:05:50 +0000</pubDate>
+      
+      <guid>https://kitsonkelly.com/posts/fanboy/</guid>
+      <description>I got to be a fanboy this week.
+It isn&amp;rsquo;t often that you get to meet someone who has their own wikipedia page. Let alone someone who had tangentially had a huge influence in your life. Anders has lived his life blissfully unaware of the impact he has had on mine.
+For those who don&amp;rsquo;t know, Anders is Technical Fellow at Microsoft and is the architect of many modern programming languages.</description>
+    </item>
+    
+  </channel>
+</rss>

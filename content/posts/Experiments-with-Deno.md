@@ -1,9 +1,22 @@
-+++
-title = "Experiments with deno"
-date = 2018-05-31T09:18:03Z
-tags = ["v8", "typescript", "golang", "deno"]
-comments = true
-+++
+---
+title: "Experiments with Deno"
+date: 2018-05-31T09:18:03Z
+tags:
+- v8
+- typescript
+- golang
+- deno
+comments: true
+author:
+  name: Kitson Kelly
+  image: /images/kpk_512.jpeg
+menu:
+  sidebar:
+    name: Experiments
+    identifier: deno-experiments
+    parent: Deno
+    weight: 300
+---
 
 I saw the following tweet from Mohsen:
 

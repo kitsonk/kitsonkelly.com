@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>package manager on Kitson P. Kelly Blog</title>
+    <link>https://kitsonkelly.com/tags/package-manager/</link>
+    <description>Recent content in package manager on Kitson P. Kelly Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-gb</language>
+    <lastBuildDate>Thu, 28 May 2020 12:00:17 +1000</lastBuildDate>
+    
+	<atom:link href="https://kitsonkelly.com/tags/package-manager/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Deno is a Browser for Code</title>
+      <link>https://kitsonkelly.com/posts/deno-is-a-browser-for-code/</link>
+      <pubDate>Thu, 28 May 2020 12:00:17 +1000</pubDate>
+      
+      <guid>https://kitsonkelly.com/posts/deno-is-a-browser-for-code/</guid>
+      <description>Explaining the different mental model Deno has about managing dependant code.</description>
+    </item>
+    
+  </channel>
+</rss>

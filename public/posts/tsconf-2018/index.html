@@ -1,0 +1,582 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>TSConf 2018</title>
+    <meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+
+
+<link rel="stylesheet" href="/assets/css/bootstrap.min.css" />
+<link rel="stylesheet" href="/assets/css/layouts/main.css" />
+<link rel="stylesheet" href="/assets/css/style.css" />
+<link rel="stylesheet" href="/assets/css/navigators/navbar.css" />
+
+
+<link href="https://fonts.googleapis.com/css2?family=Muli:wght@300;400;500;600" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css" />
+
+
+<link rel="icon" type="image/png" href="/assets/images/favicon.png" />
+
+
+<link rel="stylesheet" href="/assets/css/style.css" />
+
+    
+<meta name="description" content="TSConf 2018" />
+<link
+  rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.1/styles/atom-one-dark.min.css"
+/>
+<link rel="stylesheet" href="/assets/css/layouts/single.css" />
+<link rel="stylesheet" href="/assets/css/navigators/sidebar.css">
+
+
+    
+    
+      
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-42376316-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+    
+  </head>
+
+  <body data-spy="scroll" data-target="#TableOfContents" data-offset="80">
+    <div class="container-fluid bg-dimmed wrapper">
+      
+      
+    <nav class="navbar navbar-expand-xl top-navbar final-navbar shadow">
+  <div class="container">
+    
+    
+    
+      
+    
+    
+      
+    
+      <button class="navbar-toggler navbar-light" id="sidebar-toggler" type="button" onclick="toggleSidebar()">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <a class="navbar-brand" href="https://kitsonkelly.com/">
+      <img src="/images/cactus_logo_black.png">Kitson P. Kelly Blog</a>
+    <button class="navbar-toggler navbar-light" id="toc-toggler" type="button" onclick="toggleTOC()">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="top-nav-items">
+      <ul class="navbar-nav ml-auto">
+      </ul>
+    </div>
+  </div>
+  
+  <img src="/images/cactus_logo_black.png" class="d-none" id="main-logo">
+  <img src="/images/cactus_logo_white.png" class="d-none" id="inverted-logo">
+</nav>
+
+
+
+      
+      
+  <section class="sidebar-section" id="sidebar-section">
+    <div class="sidebar-holder">
+      <div class="sidebar" id="sidebar">
+        <input type="text" value="" placeholder="Search" data-search="" id="search-box" />
+        <div class="sidebar-tree">
+          <ul class="tree" id="tree">
+            <li id="list-heading"><a href="/posts" data-filter="all">Posts</a></li>
+            <div class="subtree">
+                
+  
+  
+  
+  
+  
+    
+    <li><a class="" href="/posts/fanboy/">Fanboy</a></li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li><a class="" href="/posts/going-down-under/">Going Down Under</a></li>
+  
+
+  
+  
+  
+  
+    
+    
+  
+  
+    
+    <li><a class="active" href="/posts/tsconf-2018/">TSConf 2018</a></li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li>
+      <i class="fas fa-plus-circle"></i><a class="" href="">Deno</a>
+      
+      <ul class="">
+        
+  
+  
+  
+  
+  
+    
+    <li><a class="" href="/posts/deno-is-a-browser-for-code/">Deno is a Browser for Code</a></li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li><a class="" href="/posts/bundling-in-deno/">Bundling</a></li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li><a class="" href="/posts/experiments-with-deno/">Experiments</a></li>
+  
+
+
+      </ul>
+    </li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li>
+      <i class="fas fa-plus-circle"></i><a class="" href="">Politics</a>
+      
+      <ul class="">
+        
+  
+  
+  
+  
+  
+    
+    <li><a class="" href="/posts/sick-america/">Sick America</a></li>
+  
+
+
+      </ul>
+    </li>
+  
+
+
+            </div>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+      
+      
+<section class="content-section" id="content-section">
+  <div class="content">
+    <div class="container p-0 read-area">
+      
+      <div class="hero-area col-sm-12" id="hero-area" style='background-image: url(https://kitsonkelly.com/images/TSConf_Sign.jpg);'>
+      </div>
+
+      
+      <div class="page-content">
+        <div class="author-profile ml-auto align-self-lg-center">
+          <img class="rounded-circle" src='/images/kpk_512.jpeg'/>
+          <h5 class="author-name">Kitson Kelly</h5>
+          <p>March 13, 2018</p>
+        </div>
+
+        <div class="title">
+          <h1>TSConf 2018</h1>
+        </div>
+
+        <div class="post-content" id="post-content">
+          <p>I got the opportunity to attend <a href="https://tsconf.io">TSConf 2018</a>. It was the worlds first focused conference on TypeScript and the lead organiser was my former employer <a href="https://sitepen.com">SitePen</a>. We had been batting around a focused conference for an extended period of time, and when Dylan and I visit the TypeScript team about 9 months ago, we figured it was time to pull it together. I wasn&rsquo;t able to stay around to help make it a reality, but I was glad I could attend to see the outcome.</p>
+<!-- more -->
+<p><img src="/images/TSConf_Sign.jpg" alt="Entrance to TSConf at Axis in Seattle"></p>
+<h2 id="keynote---anders-hejlsberg">Keynote - Anders Hejlsberg</h2>
+<p>I suspect you can&rsquo;t really expect to have any first <em>official</em> TypeScript conference without having Anders Hejlsberg (<a href="https://twitter.com/ahejlsberg">@ahejlsberg</a>) as your keynote speaker. After having gotten my <a href="./Fanboy">fanboy experience</a> out of the way when I visited Redmond last year, I was looking forward to Anders&rsquo; talk and I wasn&rsquo;t disappointed. It was clear he was enjoying talking to a group of people who actually lived and breathed TypeScript. I suspect most of the time he has to go back to the basics of what is TypeScript instead of talking about the interesting aspects.</p>
+<p>Anders started talking about the history of TypeScript, in particular how Microsoft saw that JavaScript was going to become important to the enterprise but that it wasn&rsquo;t going to be able to scale to enterprise applications. He indicated that even in the earliest days, in 2011 when it was code named <em>Strada</em>, that it was always envisioned that it would be a super set of JavaScript. One thing that was off the table in the early days was generics in TypeScript, as it was considered too hard of a problem to solve. Of course those familiar with the language now know that generics are a critical and powerful feature of TypeScript.</p>
+<p>He gave insight into one areas of TypeScript that most users never even notice, which is good (and sometimes a little bad) in that there are actually two namespaces. There is the <em>type</em> namespace and the <em>member</em> namespace. The <em>type</em> namespace is what doesn&rsquo;t exist at runtime in JavaScript and is purely the domain of TypeScript, while the <em>member</em> namespace is where the variables and other identifiers which exist at runtime are. TypeScript manages both of those namespaces at the same time, and very seldom does the developer need to be aware they exist.</p>
+<p>Also from the early design notes for TypeScript, Anders said that it was a big change for Microsoft to explicitly state that <em>winning in this space is not about protecting IP</em>. TypeScript was designed from the start to be an open language. Something that has continued to this day. Anders highlighted too that a side project, <a href="https://github.com/DefinitelyTyped/DefinitelyTyped/">DefinitelyTyped</a> has the most reviews of any project on GitHub, has over 42k commits and almost 8k contributors. This project, along with TypeScript are providing type intelligence, not only to projects written in TypeScript but also just plain old JavaScript.</p>
+<p>One of the interesting things that Anders talked about is that the TypeScript compiler, as it stands now, is actually the 3<sup>rd</sup> rewrite of the compiler. The first version really was an experiment, the second version struggled from a performance perspective and the current 3rd generation was something he felt they could maintain and live with in the long term. It is a heavily functional based compiler, which is something that surprised him. He indicated a couple times that sort of living in the Object Oriented world his whole career, he has found that functional programming has a lot to offer. It almost sounded like he was a convert. I know personally, having been raised with OOP, I too have found that sometimes it causes a huge amount of indirection and doesn&rsquo;t really deliver as well on the promises it makes. That in a lot of ways, some problems are significantly easier to solve when you start looking at things where your logic and data are cleanly separated. Hearing Anders say some of the things that I had thought for a long time was really interesting.</p>
+<p><img src="/images/Turtles.jpg" alt="Slide equating recursive types to an infinite stack of turtles supporting the Earth"></p>
+<p>Probably one of the most fun and interesting moments of Anders is when he talked about recursive types. He had indicated that the team had struggled with it and felt that maybe they were missing something, that there has to be a solution to it. They went off to Microsoft Research and asked &ldquo;ok, how do solve this problem?&rdquo; the response &ldquo;oh, yeah, that problem&hellip; well everyone cheats on that problem.&rdquo; So in TypeScript when using a recursive type, TypeScript only goes to about five <em>turtles</em> deep before it cuts off. Anders then said that in practice there wasn&rsquo;t a single issue raised that that had caused a problem, until recently, and someone had some crazy JSON type that was about 10 <em>turtles</em> deep where it changed and was wondering why TypeScript wasn&rsquo;t catching errors in it.</p>
+<p><img src="/images/Strict_TypeScript.jpg" alt="A slide showing a nun with a ruler and talking about strict mode in TypeScript"></p>
+<p>Anders touched on a part of TypeScript I have always been a fan of, the strictness. Over the last several versions of TypeScript greater and greater levels of type checking and adherence have been introduced. The continue to do analysis of how the impacts of the strictness actually impact code and are finding that the a good third of the time, increased strictness is actually identifying issues with the code, while a third of the time, it is identifying code that <em>could</em> have been a problem in the future.</p>
+<p>Anders finished with two things in the future with TypeScript. With conditional types coming in TypeScript 2.8 (which is going to a release candidate this week) and then project references coming at some point in the future.</p>
+<p>Conditional types essentially allow description of complex types where resolution of a generic type influences the final type at the usage site. This solves a whole class of problems, far more than I had thought when I first heard about it. For example, you can actually properly model the <code>typeof</code> operator with string literals in TypeScript:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ts" data-lang="ts"><span style="color:#a6e22e">type</span> <span style="color:#a6e22e">TypeName</span>&lt;<span style="color:#f92672">T</span>&gt; <span style="color:#f92672">=</span> <span style="color:#a6e22e">T</span> <span style="color:#66d9ef">extends</span> <span style="color:#66d9ef">string</span>
+  <span style="color:#f92672">?</span> <span style="color:#e6db74">&#34;string&#34;</span>
+  <span style="color:#f92672">:</span> <span style="color:#a6e22e">T</span> <span style="color:#66d9ef">extends</span> <span style="color:#66d9ef">number</span>
+    <span style="color:#f92672">?</span> <span style="color:#e6db74">&#34;number&#34;</span>
+    <span style="color:#f92672">:</span> <span style="color:#a6e22e">T</span> <span style="color:#66d9ef">extends</span> <span style="color:#66d9ef">boolean</span>
+      <span style="color:#f92672">?</span> <span style="color:#e6db74">&#34;boolean&#34;</span>
+      <span style="color:#f92672">:</span> <span style="color:#a6e22e">T</span> <span style="color:#66d9ef">extends</span> <span style="color:#66d9ef">undefined</span>
+        <span style="color:#f92672">?</span> <span style="color:#e6db74">&#34;undefined&#34;</span>
+        <span style="color:#f92672">:</span> <span style="color:#a6e22e">T</span> <span style="color:#66d9ef">extends</span> Function <span style="color:#f92672">?</span> <span style="color:#e6db74">&#34;function&#34;</span> <span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;object&#34;</span>;
+
+<span style="color:#66d9ef">function</span> <span style="color:#a6e22e">typeOf</span>&lt;<span style="color:#f92672">T</span>&gt;(<span style="color:#a6e22e">x</span>: <span style="color:#66d9ef">T</span>) {
+  <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">typeof</span> <span style="color:#a6e22e">x</span> <span style="color:#66d9ef">as</span> <span style="color:#a6e22e">TypeName</span>&lt;<span style="color:#f92672">T</span>&gt;;
+}
+</code></pre></div><p>The thing that was most exciting to me about this is that it solves a whole set of challenges that I know I have struggled with but also loads of wider community have struggled with. In a lot of ways, this really gets as close as I think we need for <em>programmatic types</em>, where we would essentially have direct access to the type system from within the code. Here are some of the new pre-defined types that leverage the new conditional types:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ts" data-lang="ts"><span style="color:#a6e22e">type</span> <span style="color:#a6e22e">Exclude</span>&lt;<span style="color:#f92672">T</span><span style="color:#960050;background-color:#1e0010">,</span> <span style="color:#a6e22e">U</span>&gt; <span style="color:#f92672">=</span> <span style="color:#a6e22e">T</span> <span style="color:#66d9ef">extends</span> <span style="color:#a6e22e">U</span> <span style="color:#f92672">?</span> <span style="color:#a6e22e">never</span> : <span style="color:#66d9ef">T</span>;
+<span style="color:#a6e22e">type</span> <span style="color:#a6e22e">Extract</span>&lt;<span style="color:#f92672">T</span><span style="color:#960050;background-color:#1e0010">,</span> <span style="color:#a6e22e">U</span>&gt; <span style="color:#f92672">=</span> <span style="color:#a6e22e">T</span> <span style="color:#66d9ef">extends</span> <span style="color:#a6e22e">U</span> <span style="color:#f92672">?</span> <span style="color:#a6e22e">T</span> : <span style="color:#66d9ef">never</span>;
+<span style="color:#a6e22e">type</span> <span style="color:#a6e22e">NonNullable</span>&lt;<span style="color:#f92672">T</span>&gt; <span style="color:#f92672">=</span> <span style="color:#a6e22e">T</span> <span style="color:#66d9ef">extends</span> <span style="color:#66d9ef">null</span> <span style="color:#f92672">|</span> <span style="color:#66d9ef">undefined</span> <span style="color:#f92672">?</span> <span style="color:#a6e22e">never</span> : <span style="color:#66d9ef">T</span>;
+
+<span style="color:#a6e22e">type</span> <span style="color:#a6e22e">ReturnType</span>&lt;<span style="color:#f92672">T</span> <span style="color:#a6e22e">extends</span> <span style="color:#960050;background-color:#1e0010">(</span><span style="color:#a6e22e">...args</span><span style="color:#960050;background-color:#1e0010">:</span> <span style="color:#a6e22e">any</span><span style="color:#960050;background-color:#1e0010">[])</span> <span style="color:#960050;background-color:#1e0010">=</span>&gt; <span style="color:#a6e22e">any</span><span style="color:#f92672">&gt;</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">T</span> <span style="color:#66d9ef">extends</span> (
+  ...<span style="color:#a6e22e">args</span>: <span style="color:#66d9ef">any</span>[]
+) <span style="color:#f92672">=&gt;</span> <span style="color:#a6e22e">infer</span> <span style="color:#a6e22e">R</span>
+  <span style="color:#f92672">?</span> <span style="color:#a6e22e">R</span>
+  : <span style="color:#66d9ef">any</span>;
+
+<span style="color:#a6e22e">type</span> <span style="color:#a6e22e">InstanceType</span>&lt;<span style="color:#f92672">T</span> <span style="color:#a6e22e">extends</span> <span style="color:#a6e22e">new</span> <span style="color:#960050;background-color:#1e0010">(</span><span style="color:#a6e22e">...args</span><span style="color:#960050;background-color:#1e0010">:</span> <span style="color:#a6e22e">any</span><span style="color:#960050;background-color:#1e0010">[])</span> <span style="color:#960050;background-color:#1e0010">=</span>&gt; <span style="color:#a6e22e">any</span><span style="color:#f92672">&gt;</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">T</span> <span style="color:#66d9ef">extends</span> <span style="color:#66d9ef">new</span> (
+  ...<span style="color:#a6e22e">args</span>: <span style="color:#66d9ef">any</span>[]
+) <span style="color:#f92672">=&gt;</span> <span style="color:#a6e22e">infer</span> <span style="color:#a6e22e">R</span>
+  <span style="color:#f92672">?</span> <span style="color:#a6e22e">R</span>
+  : <span style="color:#66d9ef">any</span>;
+</code></pre></div><p>You can even model things like <em>flatten</em> (or <em>smoosh</em> should I say?):</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ts" data-lang="ts"><span style="color:#a6e22e">type</span> <span style="color:#a6e22e">Flatten</span>&lt;<span style="color:#f92672">T</span>&gt; <span style="color:#f92672">=</span> <span style="color:#a6e22e">T</span> <span style="color:#66d9ef">extends</span> Array&lt;<span style="color:#f92672">infer</span> <span style="color:#a6e22e">U</span>&gt; <span style="color:#f92672">?</span> <span style="color:#a6e22e">U</span> : <span style="color:#66d9ef">T</span>;
+
+<span style="color:#a6e22e">type</span> <span style="color:#a6e22e">T1</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">Flatten</span>&lt;<span style="color:#f92672">string</span>&gt;; <span style="color:#75715e">// string
+</span><span style="color:#75715e"></span><span style="color:#a6e22e">type</span> <span style="color:#a6e22e">T2</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">Flatten</span>&lt;<span style="color:#f92672">string</span><span style="color:#960050;background-color:#1e0010">[]</span>&gt;; <span style="color:#75715e">// string
+</span></code></pre></div><p>Ander&rsquo;s finished up his talk about some work that Ryan Cavanaugh (<a href="https://twitter.com/SeaRyanC">@SeaRyanC</a>) has been leading which is to try to find a way to deal with <em>big</em> projects and allow structuring of complex projects, where there might be different configurations and more importantly, don&rsquo;t require the compiler to re-build the entire project each time. This didn&rsquo;t make 2.8 and Anders didn&rsquo;t want to commit to a release that it will be in, but hopes in the relative near future.</p>
+<p>While there was already the ability to extend TypeScript configuration files, this feature would introduce project references. Each <code>tsconfig.json</code> would be able to express other TypeScript projects that it exists with, essentially making mono-repos of large TypeScript projects a reality. The biggest impact was in the performance. In all good things there has been some <em>dog-fooding</em> by the team by breaking up the TypeScript compiler into separate projects. Anders live demonstrated how not only does it make incremental change quicker (super quick) it actually improves the whole compile process because TypeScript is given information about when certain areas of code are going to be required in the compile time and that those <em>packages</em> of TypeScript. I really can see a lot of application of this in the future. It was one of the things we struggled with in Dojo 2, how to realistic &ldquo;build from source&rdquo; for projects.</p>
+<p>Overall the talk was engaging and exciting and as I was going to find out from the rest of the day, I learned a lot from the talk.</p>
+<h2 id="building-stenciljs-with-typescript--josh-thomas">Building StencilJS with TypeScript – Josh Thomas</h2>
+<p>Josh Thomas (<a href="https://twitter.com/jthoms1">@jthoms1</a>), one of the core developers at Ionic, talked to us about StencilJS. I had heard of StencilJS and knew at a high level what it was attempting to do. In particular Matt Gadd came back from a conference totally impressed with it, and commented that if we were starting Dojo 2 again, we might have just embraced StencilJS. From a design ethos it was very synergistic with what we set out to achieve with the widgeting system for Dojo 2.</p>
+<p>Ionic has, in my opinion, picked the right moment to fully embrace Web Components, and StencilJS seems like a solid bit of technology. They also have addressed some of the things I <em>dislike</em> about Angular 2+ components, in that they have heavy use of decorators that perform a lot of <em>magic</em> this it dangerous in that it doesn&rsquo;t really integrate well with the type system. They have created the necessary tooling to inject intelligence and safety into decorators at design and build time.</p>
+<p>They also, like we found with Dojo 2, appreciate the <em>reactive</em> model for widgets. Josh indicated that a lot of the life-cycle methods are directly adapted from React.</p>
+<p>The beauty of course is that being Web Components, StencilJS components can be used with any framework you so choose, or even realistically with <em>VanillaJS</em>.</p>
+<p>Overall, Josh&rsquo;s talk reinforced that I should take a closer look at StencilJS and certainly if I hear of people using it, it would not be one of those things that would raise alarm bells in my head, like some other technology which just worries me when I hear people using it.</p>
+<h2 id="escape-the-office-designing-interfaces-for-other-developers--sarah-highley">Escape the Office: Designing Interfaces for Other Developers – Sarah Highley</h2>
+<p>I of course have a soft spot for Sarah Highley (<a href="https://twitter.com/codingchaos">@codingchaos</a>), having interviewed her to work at SitePen and been quite proud that we had her join the team. Now that I have left SitePen, it is really good to see that she is continuing to challenge herself and do more public speaking.</p>
+<p><img src="/images/Milestone_Monsters.jpg" alt="Slide showing cartoons of the Caveman Coder, The Intern Horde and the Inventor"></p>
+<p>Sarah&rsquo;s talk focused on two main areas, first that TypeScript really allows us to design APIs not only for ourselves, but other developers. She adapted some of the <em>monsters</em> from the <a href="https://milestonemayhem.com/">MileStone Mayhem</a> game we developed at SitePen. I was also hugely proud that one of the monsters I gave a <a href="https://www.sitepen.com/blog/2017/10/17/caveman-coders-and-how-to-defend-against-them/">talk on</a> and we added to the game, made an appearance. Sarah then applied these three types of programmers to how they would consume an API around creating accessible components, and how we create the interfaces in TypeScript directly increase usability and help keep these different types of programmers from making mistakes.</p>
+<p>Sarah is hugely passionate about accessibility, and it was demonstrated again. I remarked to her and others afterwards, that while we need to continue to be proactive about diversity at conference, I am feeling like we also need to have at least one talk that reminds people about the need of accessibility. I don&rsquo;t think most developers <em>want</em> to make applications that aren&rsquo;t accessible to certain people, but that is what we often accidentally do.</p>
+<h2 id="end-to-end-type-safety-with-swagger-and-typescript--mohsen-azimi">End-to-End Type Safety with Swagger and TypeScript – Mohsen Azimi</h2>
+<p><img src="/images/Lost_Types.jpg" alt="A slide showing the server and the client with a crying emoji in the middle, titled The Lost Types"></p>
+<p>Mohsen (<a href="https://twitter.com/mohsen____">@mohsen____</a>) is from Lyft and was talking about the challenges of rapidly changing server side APIs, but then introducing breaking changes in the client code. One of the things Lyft did rather publicly was migrate their front end code to TypeScript, mostly because they got tired of people pointing out a lot of the mistakes they were making could be caught via TypeScript.</p>
+<p>They still suffered from regressions though, where developers would make breaking API changes on the server side and not realise the impact they were having on the client side, because all the types get lost in the communication between the back end and the front end. What if the two could talk together, Mohsen pondered. Of course TypeScript support strong typing, and there are tools like <a href="https://github.com/swagger-api/swagger-codegen/">swagger-codegen</a> which can generate TypeScript typings based on an API definition.</p>
+<p>The challenge becomes how best to describe the APIs on the server side to ensure that the whole API is maintained. Well traditionally this could be accomplished by sever annotations that helped describe the full API. That of course can be a challenging, since those annotations are not always tied to the actual code.</p>
+<p>What Mohsen proposed was to author the contract of your APIs as <a href="https://developers.google.com/protocol-buffers/">Protocol Buffers</a> to describe your API in a language agnostic way, which can do both code gen on the server side language, but also be ingested by Swagger to define the contract for the API. This then can be used to keep your client side TypeScript code in sync with the APIs and help identify quite quickly if an API change is going to cause an impact on the client.</p>
+<p>I have to say overall, that exploiting TypeScript to ensure that our communication with between the client and the server is an excellent way to help bring more sanity to the front-end and an ideal use of the technologies. It is great to see others coming to the same conclusions and helping move forward the community.</p>
+<h2 id="typescript-at-google--rado-kirov-and-bowen-ni">TypeScript at Google – Rado Kirov and Bowen Ni</h2>
+<p>One of my fears about the conference was that it might be dominated by Angular, but I was really glad to find a huge diversity in the topics and these even came from those who were speaking from the Angular team. While Rado (<a href="https://twitter.com/radokirov">@radokirov</a>) and Bowen (<a href="https://github.com/bowenni">bowenni</a>) are both formally part of the Angular team, their day to day jobs are to help manage TypeScript usage at Google.</p>
+<p><img src="/images/Google_Usage_TypeScript.jpg" alt="A slide showing the current usage of TypeScript at Google"></p>
+<p>Rado explained how that the way Google develop code has some advantages and disadvantages and that their job of maitaining the usage of the language in the organisation has some unique challenges. Google has a gigantic mono repo and the ~70k TypeScript files can only be used transpiled with a single version of TypeScript. That means that have to utilise particular tooling to achieve this. They have migrated the code base from every release of TypeScript from 1.4 to 2.6 and it takes about 3-4 engineering weeks of work to upgrade.</p>
+<p>They use some automated tooling to perform the upgrades and the really interesting strategy is that when an upgrade causes a type error, what they do is cast the variable/assignment to a specific type alias of <code>any</code>. For example when upgrading to 2.6, they would do something like this:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ts" data-lang="ts"><span style="color:#a6e22e">type</span> <span style="color:#a6e22e">AnyDuringTS26Migration</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">any</span>; <span style="color:#75715e">// remove after 2.6 lands
+</span><span style="color:#75715e"></span>
+<span style="color:#a6e22e">someFunction</span>(<span style="color:#a6e22e">expr</span>); <span style="color:#75715e">// error with stricter checks in 2.6
+</span><span style="color:#75715e">// get change to...
+</span><span style="color:#75715e"></span><span style="color:#a6e22e">someFunction</span>(<span style="color:#a6e22e">expr</span> <span style="color:#66d9ef">as</span> <span style="color:#a6e22e">AnyDuringTS26Migration</span>);
+</code></pre></div><p>They then use tooling to track that the teams that own the code actually get around to fixing whatever is required to make the code work with the updated version.</p>
+<p>They also discussed what makes a good style guide, especially with TypeScript. They indicated that a good style guide should do the following:</p>
+<ul>
+<li>Local knowledge is important</li>
+<li>Global rules should be an exception</li>
+<li>A rule should be in the style guide if it removes a known problem
+<ul>
+<li>For example, discourage use of <code>any</code> or disallow namespaces</li>
+</ul>
+</li>
+<li>Provides consistency across irrelevant variations
+<ul>
+<li>For example, <code>T[]</code> or <code>Array&lt;T&gt;</code></li>
+<li>For example, <code>expr as T</code> or <code>&lt;T&gt;expr</code> or <code>&lt;T&gt; expr</code></li>
+</ul>
+</li>
+<li>Helps maintain code long-term</li>
+</ul>
+<p>The other think that they talked about is how they use specially built tooling that integrates with the TypeScript language service to make some of the refactorings of code easier, especially when dealing with things at scale. The application is called <a href="https://github.com/alexeagle/tsetse">tsetse</a> which they use to fix or refactor known patterns of code and generate changes which are then submitted to the code owners for acceptance.</p>
+<p><img src="/images/tsetse.jpg" alt="Graph showing the utility of tsetse, users say that 21% of errors detected by tsetse would have been found in production"></p>
+<p>The team did a survey of the users, to understand if the higher-order static analysis was actually adding value or just noise. While there was likely 24% of errors that wouldn&rsquo;t have gotten past code review, the majority of issues would not have been identified until testing or even worse, would have been found by users in production. This type of tooling highlights that the TypeScript compiler is designed to be open. While the language services APIs are not as well documented as we would like, they are still powerful tools we can leverage. It also highlights that static code analysis and finding bugs early is a really important pattern.</p>
+<h2 id="making-weird-physical-games-with-typescript--mike-lazer-walker">Making Weird Physical Games with TypeScript – Mike Lazer-Walker</h2>
+<p>Making physical games with TypeScript might not be the fist thing that comes to peoples minds, but it is with Mike (<a href="https://twitter.com/lazerwalker">@lazarwalker</a>). While a lot of his projects span the physical and logical worlds, he had found himself writing narrative stories and made an <a href="https://github.com/lazerwalker/storyboard">open tool</a>, based on TypeScript for writing those stories. He can then plumb those narratives into the physical displays he creates.</p>
+<p>For example, one of his big installations was a working game using vintage 1920s telephone switching hardware:</p>
+<blockquote class="twitter-tweet tw-align-center" data-lang="en" data-theme="dark"><p lang="en" dir="ltr">I made a game played on an actual vintage 1920s telephone switchboard! <a href="https://t.co/tDB20dsu6T">https://t.co/tDB20dsu6T</a> <a href="https://t.co/ICrXegsYQq">pic.twitter.com/ICrXegsYQq</a></p>&mdash; mike (@lazerwalker) <a href="https://twitter.com/lazerwalker/status/890293234534031360?ref_src=twsrc%5Etfw">July 26, 2017</a></blockquote>
+<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+<p>It was interesting hearing his stories of physical game installations as well as how TypeScript was helping him create innovative ideas as well as inspire others to create interesting art.</p>
+<h2 id="static-analysis-and-source-code-manipulation-in-typescript--david-sherret">Static Analysis and Source Code Manipulation in TypeScript – David Sherret</h2>
+<p>I remember when I was reading all the talks briefs submitted, I thought this was going to be the most interesting one technically, but I wasn&rsquo;t sure how well it would play in front of an audience. The interesting thing is that everyone in the room really seemed to like it and David (<a href="https://twitter.com/davidsherret">@davidsherret</a>) delivered an excellent presentation. He is a quiet and reserved Canadian, but packed a fairly powerful punch.</p>
+<p>The first bomb he dropped on us was an <a href="http://ts-ast-viewer.com">AST viewer for TypeScript</a>. While we have some excellent JavaScript AST viewers, and even <a href="https://astexplorer.net/">AST Explorer</a> supports TypeScript now, having a focused dedicated AST viewer was nice to see.</p>
+<p>He went on to provide was a primer on walking TypeScript AST, using his <a href="https://github.com/dsherret/ts-simple-ast">handy API</a> which makes interfacing with the TypeScript AST a little bit easier, for example using the library to help enforce higher order design patterns:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ts" data-lang="ts"><span style="color:#75715e">// for each public class method in our source file...
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">const</span> <span style="color:#a6e22e">method</span> <span style="color:#a6e22e">of</span> <span style="color:#a6e22e">classDec</span>.<span style="color:#a6e22e">getInstanceMethods</span>()) {
+  <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">method</span>.<span style="color:#a6e22e">getReturnType</span>().<span style="color:#a6e22e">isNullable</span>()
+      <span style="color:#f92672">&amp;&amp;</span> <span style="color:#a6e22e">classDec</span>.<span style="color:#a6e22e">getInstanceMethod</span>(<span style="color:#a6e22e">method</span>.<span style="color:#a6e22e">getName</span>() <span style="color:#f92672">+</span> <span style="color:#e6db74">&#39;OrThrow&#39;</span>) <span style="color:#f92672">===</span> <span style="color:#66d9ef">undefined</span>)
+    {
+      <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">warn</span>(<span style="color:#e6db74">`Expected method </span><span style="color:#e6db74">${</span><span style="color:#a6e22e">classDec</span>.<span style="color:#a6e22e">getName</span>()<span style="color:#e6db74">}</span><span style="color:#e6db74">.</span><span style="color:#e6db74">${</span><span style="color:#a6e22e">method</span>.<span style="color:#a6e22e">getName</span>()<span style="color:#e6db74">}</span><span style="color:#e6db74"> `</span> <span style="color:#f92672">+</span>
+        <span style="color:#e6db74">`to have a corresponding OrThrow method.`</span>);
+    }
+}
+</code></pre></div><p>Again, like with the talk by Rado and Bowen, extending the TypeScript compiler to provide additional higher order static analysis seems to be a common use case for larger teams. I think it is a really interesting space and something I think I will consider in the future when faced with these sorts of problems.</p>
+<h2 id="webpack-and-ethereum-smart-contract-with-typescript--devon-zuegel">Webpack and Ethereum Smart Contract with TypeScript – Devon Zuegel</h2>
+<p>It was only after Devon (<a href="https://twitter.com/devonzuegel">@devonzuegel</a>) gave her talk, I found out that it was her first conference talk. I would have never have known. I happened to be sitting next to Anders and I know he too was really impressed with her talk.</p>
+<p>Devon first spoke about how <a href="https://webpack.js.org/">webpack</a>, while being one of the most powerful tools in the web application space, is a beast to master, and how applying TypeScript to the configuration of webpack has allowed her, and her team to start to master it. I think the whole room was nodding with her about this.</p>
+<p>This led into talking about Ethereum smart contracts and how the company she works for, <a href="https://bloom.co/">Bloom</a>, has realised the power of static typing in relationship to smart contracts. She mentioned the case of nearly $6 million that has been lost forever in Ethereum because there was not static type checking on an Ethereum address that was addressed as a string instead of a hex address. She hypothesised that if static type checking had been used, it would have at least flagged that the address was not typed appropriately and could have saved someone losing millions of dollars. She continued to describe how they have been finding applicability of strong typing in every aspect at Bloom, and how dealing when dealing with smart contracts, it is essentially unacceptable to have it left up to the vagaries of a weakly typed language like JavaScript.</p>
+<h2 id="qa-with-the-typescript-team">Q&amp;A with the TypeScript Team</h2>
+<p>Nick (<a href="https://twitter.com/nicknisi">@nicknisi</a>), who had been hosting the event and Torrey (<a href="https://twitter.com/iTorrey">@iTorrey</a>) who hosts <a href="https://twitter.com/talkscript">TalkScript</a>, a TypeScript podcast, asked questions of a panel from the TypeScript team. The panel included Mohamed (<a href="https://twitter.com/fdsmars">@fdsmars</a>), Ryan (<a href="https://twitter.com/SeaRyanC">@SeaRyanC</a>), Anders (<a href="https://twitter.com/ahejlsberg">@ahejlsberg</a>) and Daniel (<a href="https://twitter.com/drosenwasser">@drosenwasser</a>).</p>
+<p><img src="/images/TypeScript_Team.jpg" alt="A picture of Mohamed, Ryan, Anders and Daniel"></p>
+<p>There was a fair amount of insight and ideas floating around on the panel. Some interesting things I picked up during the QA where:</p>
+<ul>
+<li>We are all frustrated with ES Modules. While there is little issue with the syntax, the implementation has been nothing but problems. I had a few offline conversations afterwards too, and the feeling was there was a lot of blame to go around. The quote though from Anders was <em>we can flag our way out of it</em> indicating that one way or another, we can set flags which will adjust the emits for our targets. Realistically I think we are in a world where bundling using tools like webpack are here to stay, because even if we do <em>fix</em> ES Modules, there are other things like HTML, CSS and static assets that we will need to manage.</li>
+<li>The team regrets implementing some things, like namespaces/modules, ahead of the ECMAScript/TC39 standards. They have learned from that and when it comes to things that are domains of the syntax of the language, they will only implement when it reaches <a href="https://tc39.github.io/process-document/">Stage 3</a>.</li>
+<li>Anders talked a bit more on how he has learned a lot from functional programming versus OOP and how it has made him think about approaches to problems differently.</li>
+<li>In talking about the perfect language, Anders said <em>show me the perfect language and I will show you one with no users</em> and how TypeScript will continue to evolve and pick up some crud along the way, and that in a way is the sign of a healthy language, versus this idealistic one that doesn&rsquo;t actually solve real world problems.</li>
+<li>Torrey asked what each team member&rsquo;s spirit emoji was. Daniel of course went for 💩. Colour me surprised.</li>
+<li>There was further disclosure by Daniel that he had originally worked on the <code>--pretty</code> flag for TypeScript and so the team started referring to him as <em>Pretty Boy</em>.</li>
+</ul>
+<p>There was a good combination of humour and insight into the language, and I think everyone took away a little bit more and at the very least understood a bit more about the some of those behind the language.</p>
+<h2 id="final-thoughts">Final Thoughts</h2>
+<p>While I have accidentally become a TypeScript fan-boy, and am still shocked that I have become a huge fan of a Microsoft product. At its core though, TypeScript was the start of something bigger at Microsoft. It was a situation exemplified by Satya, where Microsoft is continuing to transform into an engineering led organisation. I know talking to many on the TypeScript team over the past couple of years, the team fought hard and won a lot of battles to make TypeScript a truly open language. A model that is continuing to be adopted by others, like Erich Gamma and the <a href="https://github.com/Microsoft/vscode">Visual Studio Code team</a> (which is an <a href="https://electronjs.org/">Electron</a> application authored in TypeScript) and the <a href="https://github.com/Microsoft/ChakraCore">Chakra Core</a> team.</p>
+<p>Being a part of the first focused TypeScript conference therefore was a pleasure and to meet a wider community of people, as well as touch bases with many that I know, to see how healthy the community is. I am already looking forward to the next one.</p>
+
+        </div>
+
+        
+        
+          <div class="btn-improve-page">
+              <a href="https://github.com/kitsonk/kitsonkelly.com/edit/master/content/posts/TSConf-2018.md">
+                <i class="fas fa-code-branch"></i>
+                Improve This Page
+              </a>
+          </div>
+        
+
+        
+      <hr />
+        <div class="row next-prev-navigator">
+
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+      
+      <div class="col-md-6 previous-article">
+        <a href="/posts/experiments-with-deno/" class="btn btn-outline-info">
+          <span><i class="fas fa-chevron-circle-left"></i> Prev</span>
+          <br />
+          <span>Experiments with Deno</span>
+        </a>
+      </div>
+      
+    
+    
+      
+        
+        
+          
+              
+          
+        
+        <div class="col-md-6 next-article">
+          <a href="/posts/going-down-under/" class="btn btn-outline-info">
+            <span>Next <i class="fas fa-chevron-circle-right"></i></span>
+            <br />
+            <span>Going Down Under</span>
+          </a>
+        </div>
+      
+    
+  
+
+  
+
+  
+
+  
+
+</div>
+
+      <hr />
+      
+      
+          <div id="disqus_thread"></div>
+<script type="text/javascript">
+  (function () {
+    
+    
+    if (window.location.hostname == "localhost") return;
+
+    var dsq = document.createElement("script");
+    dsq.type = "text/javascript";
+    dsq.async = true;
+    var disqus_shortname = "kitsonkelly";
+    dsq.src = "//" + disqus_shortname + ".disqus.com/embed.js";
+    (
+      document.getElementsByTagName("head")[0] ||
+      document.getElementsByTagName("body")[0]
+    ).appendChild(dsq);
+  })();
+</script>
+<noscript
+  >Please enable JavaScript to view the
+  <a href="https://disqus.com/?ref_noscript"
+    >comments powered by Disqus.</a
+  ></noscript
+>
+<a href="https://disqus.com/" class="dsq-brlink"
+  >comments powered by <span class="logo-disqus">Disqus</span></a
+>
+
+      
+      </div>
+    </div>
+  </div>
+</section>
+
+
+      
+      
+  <section class="toc-section" id="toc-section">
+    
+    <div class="toc-holder">
+      <h5 class="text-center pl-3">Table of Contents</h5>
+      <hr>
+      <div class="toc">
+        <nav id="TableOfContents">
+  <ul>
+    <li><a href="#keynote---anders-hejlsberg">Keynote - Anders Hejlsberg</a></li>
+    <li><a href="#building-stenciljs-with-typescript--josh-thomas">Building StencilJS with TypeScript – Josh Thomas</a></li>
+    <li><a href="#escape-the-office-designing-interfaces-for-other-developers--sarah-highley">Escape the Office: Designing Interfaces for Other Developers – Sarah Highley</a></li>
+    <li><a href="#end-to-end-type-safety-with-swagger-and-typescript--mohsen-azimi">End-to-End Type Safety with Swagger and TypeScript – Mohsen Azimi</a></li>
+    <li><a href="#typescript-at-google--rado-kirov-and-bowen-ni">TypeScript at Google – Rado Kirov and Bowen Ni</a></li>
+    <li><a href="#making-weird-physical-games-with-typescript--mike-lazer-walker">Making Weird Physical Games with TypeScript – Mike Lazer-Walker</a></li>
+    <li><a href="#static-analysis-and-source-code-manipulation-in-typescript--david-sherret">Static Analysis and Source Code Manipulation in TypeScript – David Sherret</a></li>
+    <li><a href="#webpack-and-ethereum-smart-contract-with-typescript--devon-zuegel">Webpack and Ethereum Smart Contract with TypeScript – Devon Zuegel</a></li>
+    <li><a href="#qa-with-the-typescript-team">Q&amp;A with the TypeScript Team</a></li>
+    <li><a href="#final-thoughts">Final Thoughts</a></li>
+  </ul>
+</nav>
+      </div>
+    </div>
+    
+  </section>
+
+    </div>
+
+    <footer class="container-fluid text-center align-content-center footer pb-2">
+  <div class="container pt-5">
+    <div class="row text-left">
+      <div class="col-md-4 col-sm-12">
+        <h5>Navigation</h5>
+        
+        <ul>
+            
+            <li class="nav-item">
+              <a class="smooth-scroll" href="/#about">About</a>
+            </li>
+            
+            
+            <li class="nav-item">
+              <a class="smooth-scroll" href="/#recent-posts">Recent Posts</a>
+            </li>
+            
+            
+            <li class="nav-item">
+              <a class="smooth-scroll" href="/#projects">Projects</a>
+            </li>
+            
+            
+            <li class="nav-item">
+              <a class="smooth-scroll" href="/#experiences">Experiences</a>
+            </li>
+            
+        </ul>
+        
+
+      </div>
+      <div class="col-md-4 col-sm-12">
+        <h5>Contact Me</h5>
+        <ul>
+          
+          <li><span>Email: </span> <span>me@kitsonkelly.com</span></li>
+          
+        </ul>
+      </div>
+      
+    </div>
+  </div>
+  <hr />
+  <div class="container">
+    <div class="row text-left">
+      <div class="col-md-4">
+        <a id="theme" href="https://github.com/hossainemruz/toha" target="#">
+          <img src="/assets/images/inverted-logo.png">
+          Toha
+        </a>
+      </div>
+      <div class="col-md-4 text-center">© 2017-2020 Kitson P. Kelly.</div>
+      <div class="col-md-4 text-right">
+        <a id="hugo" href="https://gohugo.io/">Powered by Hugo
+        <img
+          src="/assets/images/hugo-logo-wide.svg"
+          alt="Hugo Logo"
+          height="18"
+        />
+        </a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+    <script src="/assets/js/jquery-3.4.1.min.js"></script>
+<script src="/assets/js/bootstrap.min.js"></script>
+
+<script src="/assets/js/navbar.js"></script>
+<script src="/assets/js/main.js"></script>
+
+
+    
+    
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.1/highlight.min.js"></script>
+<script src="/assets/js/single.js"></script>
+<script>
+  hljs.initHighlightingOnLoad();
+</script>
+
+
+  </body>
+</html>
