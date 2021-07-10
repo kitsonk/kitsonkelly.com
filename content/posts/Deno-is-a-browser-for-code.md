@@ -20,7 +20,7 @@ author:
 menu:
   sidebar:
     name: Deno is a Browser for Code
-    identifier: deni-is-a-browser-for-code
+    identifier: deno-is-a-browser-for-code
     parent: Deno
     weight: 100
 ---
