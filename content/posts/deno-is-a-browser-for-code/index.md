@@ -3,13 +3,15 @@ title: "Deno is a Browser for Code"
 description: Explaining the different mental model Deno has about managing
   dependant code.
 date: 2020-05-28T12:00:17+10:00
+images:
+- /posts/deno-is-a-browser-for-code/hero.png
 comments: true
 summary: Explaining the different mental model Deno has about managing
   dependant code.
 tags:
-  - deno
-  - package manager
-  - registry
+- deno
+- package manager
+- registry
 author:
   name: Kitson Kelly
   image: /images/kpk_512.jpeg
