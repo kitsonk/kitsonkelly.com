@@ -1,13 +1,15 @@
 section:
   name: About
+  id: about
   enable: true
   weight: 1
   showOnNavbar: true
+  template: sections/about.html
 
 designation: Doing Stuff
 company:
-  name: Deno Land
-  url: "https://www.deno.land"
+  name: Deno Land, Inc.
+  url: "https://www.deno.com"
 
 summary: 'I am a senior technical leader and father who has decided to pursue a passion project full-time.'
 

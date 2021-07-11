@@ -3,3 +3,10 @@ copyright: © 2017-2020 Kitson P. Kelly.
 
 # Meta description for your site.  This will help the search engines to find your site.
 description: Homepage and blog for Kitson Kelly
+
+openGraph:
+  title: Kit's Blog
+  type: website
+  description: Portfolio and personal blog of Kitson Kelly.
+  image: images/kpk_512.jpeg
+  url: https://kitsonkelly.com

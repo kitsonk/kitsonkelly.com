@@ -1,4 +1,5 @@
 baseURL: https://kitsonkelly.com/
+
 languageCode: en-gb
 title: "Kitson P. Kelly Blog"
 theme: "toha"
@@ -17,6 +18,12 @@ markup:
     startLevel: 2
     endLevel: 6
     ordered: false
+
+outputs:
+  home:
+  - HTML
+  - RSS
+  - JSON
 
 # Enable Google Analytics
 googleAnalytics: UA-42376316-1
@@ -48,6 +55,7 @@ params:
 
   # GitHub repo URL of your site
   gitRepo: https://github.com/kitsonk/kitsonkelly.com
+  gitBranch: main
 
   # specify whether you want to write blog post or not
   enableBlogPost: true

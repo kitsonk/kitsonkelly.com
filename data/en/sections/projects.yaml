@@ -1,13 +1,24 @@
 section:
   name: Projects
+  id: projects
   enable: true
-  weight: 4
+  weight: 5
   showOnNavbar: true
+
+buttons:
+- name: All
+  filter: "all"
+- name: Deno
+  filter: "deno"
+- name: Professional
+  filter: "professional"
+- name: Hobby
+  filter: "hobby"
 
 projects:
 - name: Deno
   logo: images/projects/deno.svg
-  role: Core Contributor
+  role: Core Team
   timeline: "May 2018 - Present"
   repo: https://github.com/denoland/deno
   summary: A secure runtime for JavaScript and TypeScript using Rust and v8.

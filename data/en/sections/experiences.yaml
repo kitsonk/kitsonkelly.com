@@ -1,13 +1,15 @@
 section:
   name: Experiences
+  id: experiences
   enable: true
-  weight: 5
+  weight: 3
   showOnNavbar: true
 
 experiences:
 - company:
     name: Deno Land, Inc.
-    url: "https://deno.land/"
+    url: "https://deno.com/"
+    location: Melbourne, Australia
     overview: Creators of Deno, a secure runtime for JavaScript and TypeScript built with Rust and v8.
   positions:
   - designation: Doing Stuff

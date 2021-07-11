@@ -4,10 +4,6 @@ description: Explaining the different mental model Deno has about managing
   dependant code.
 date: 2020-05-28T12:00:17+10:00
 comments: true
-toc: false
-hero: /images/deno_browser.png
-images:
-  - /images/deno_browser.png
 summary: Explaining the different mental model Deno has about managing
   dependant code.
 tags:
@@ -33,8 +29,8 @@ resources off the internet is insecure." or "How can I possibly manage my
 dependencies?"
 
 In my opinion, we need to shift our mental model. Lots of folks take the
-ubiquity of package managers and centralized code registries as a requirement
-to have a package manager and a centralized code registries. Because they exist
+ubiquity of package managers and centralized code registries as a requirement to
+have a package manager and a centralized code registries. Because they exist
 doesn't mean they are required. They came into existence because they solved
 problems in a particular way, and we have just accepted them as the only way to
 solve that problem. I would argue that isn't true.
@@ -77,10 +73,10 @@ discoverability. You would go add your website to Yahoo! under the right
 categorization and people would come along, maybe use the search function, but
 it was all structured based on the opinions of those providing the content, not
 really based on optimizing for the needs of the consumer. Eventually along came
-Google. Why did Google win? Because it was useful. It indexed websites in a
-way that matched simple expressions of need (search terms) with the most
-relevant web pages that met that need, looking at multiple factors, including
-meta data provided the content provider as one factor in the mix.
+Google. Why did Google win? Because it was useful. It indexed websites in a way
+that matched simple expressions of need (search terms) with the most relevant
+web pages that met that need, looking at multiple factors, including meta data
+provided the content provider as one factor in the mix.
 
 While we don't have that model quite yet for code for Deno, it is a model that
 works. In addition, we use Google because it solves problems for us, instead of
@@ -89,15 +85,15 @@ alternatives to Google.
 
 I got into a bit of a debate with Laurie Voss on twitter, someone who knows a
 fair deal about the npm ecosystem I would say. He argued that Deno needed a
-package manager, and this blog post is a longer winded version of the thoughts
-I wanted to express, but Laurie raised a very valid point.
+package manager, and this blog post is a longer winded version of the thoughts I
+wanted to express, but Laurie raised a very valid point.
 
 {{< tweet 1261140647056076801 >}}
 
 GitHub has become the home for open source code, because it was useful and
 solved problems, and built on top of the _de facto_ source code versioning tool,
-git. From the Deno CLI perspective, there should be no technical restrictions
-to where you source code from, it is up to the wider eco-system to create and
+git. From the Deno CLI perspective, there should be no technical restrictions to
+where you source code from, it is up to the wider eco-system to create and
 evolve ways to make code for Deno discoverable, probably in innovative ways that
 could never have been conceived by those of us creating the CLI.
 
@@ -109,9 +105,9 @@ the Node.js/npm eco-system, having a repeatable build became a real problem.
 Yarn introduced the concept of lock files, of which npm followed suit.
 
 My personal feeling is it was a bit of the tail wagging the dog, in that the
-behaviours of developers in the eco-system created a problem that then needed
-an imperfect solution to fix it. Any of us that have lived with the eco-system
-for a long time know that the fix to a lot of issues is
+behaviours of developers in the eco-system created a problem that then needed an
+imperfect solution to fix it. Any of us that have lived with the eco-system for
+a long time know that the fix to a lot of issues is
 `rm -rf node_modules package-lock.json && npm install`.
 
 ![](https://memegenerator.net/img/instances/75583685/have-you-tried-rm-rf-node-modules-npm-install.jpg)
@@ -148,19 +144,18 @@ exploitable. Corporations setup private registries to host packages that might
 be vetted slightly more than the single public registry.
 
 It feels like there is an elephant in the room here. The best strategy is we
-shouldn't trust any code. Once we have that established, then opening it back
-up becomes a little be easier. But we are lying to ourselves if we think a
-package manager and a centralised registry solve this problem, or even
-substantially help with this problem. In fact, I argue they make use let our
-guards down. "Well it is on npm, if it were bad for me, surely someone would
-take it down."
+shouldn't trust any code. Once we have that established, then opening it back up
+becomes a little be easier. But we are lying to ourselves if we think a package
+manager and a centralised registry solve this problem, or even substantially
+help with this problem. In fact, I argue they make use let our guards down.
+"Well it is on npm, if it were bad for me, surely someone would take it down."
 
 Deno in this aspect isn't quite as done as I think it should be, but it is
-starting from a good position. It has zero trust at startup, and provides
-fairly fine grained permissions. One of the things I personally dislike is that
-there is the `-A` flag, which is basically saying "oh yeah allow everything"
-which is such an easy thing for a frustrated developer to do instead of figuring
-out what they really need.
+starting from a good position. It has zero trust at startup, and provides fairly
+fine grained permissions. One of the things I personally dislike is that there
+is the `-A` flag, which is basically saying "oh yeah allow everything" which is
+such an easy thing for a frustrated developer to do instead of figuring out what
+they really need.
 
 It is also hard to break down those permissions, to say "this code can do this,
 but this other code over here can't" or when code prompts to escalate privileges
@@ -170,11 +165,11 @@ runtime to try to solve those challenges.
 
 A recent change though, which is a good one, in my opinion, is that Deno no
 longer allows you to downgrade your imports. If something is imported from
-`https://` then it can only import from other `https://` locations. This
-follows the browser model of not being able to downgrade transport. I still
-think longer term it would be good to kill off any remote imports that aren't
-over `https://`, much like Service Workers require HTTPS, so we will see what
-the future holds.
+`https://` then it can only import from other `https://` locations. This follows
+the browser model of not being able to downgrade transport. I still think longer
+term it would be good to kill off any remote imports that aren't over
+`https://`, much like Service Workers require HTTPS, so we will see what the
+future holds.
 
 ## Dependency management
 
@@ -191,14 +186,14 @@ Fine!"
 My opinion is that there are several factors involved in this. A big part of it
 is that we have the model inverted, which I talked about Deno being a browser
 for code. The problem is that this backwards model has infected how we create
-websites. While we don't have a central registry, when we build a website,
-we download all the code we depend up and bake it into something that we load
-up on a server, and then each user downloads a bunch of code to their local
-machine. Some evidence is that only around 10% of that code that is downloaded
-is unique to that site or web application, the rest is all that code we are
-downloading to our development workstation and bundling up. This model being
-broken are some of the problems solutions like
-[Snowpack](https://www.snowpack.dev/) are trying to solve.
+websites. While we don't have a central registry, when we build a website, we
+download all the code we depend up and bake it into something that we load up on
+a server, and then each user downloads a bunch of code to their local machine.
+Some evidence is that only around 10% of that code that is downloaded is unique
+to that site or web application, the rest is all that code we are downloading to
+our development workstation and bundling up. This model being broken are some of
+the problems solutions like [Snowpack](https://www.snowpack.dev/) are trying to
+solve.
 
 Another significant problem is that our dependencies are not coupled with our
 code. We put dependencies in our `package.json` but if our code actually uses
@@ -209,7 +204,7 @@ on the code we write, because it is the code that is actually consuming the
 dependent code.
 
 This leads us to the Deno model, which I like to call _Deps-in-JS_, since all
-the cool kids are doing _\*-in-JS_ things. Explicitly stating our external
+the cool kids are doing _*-in-JS_ things. Explicitly stating our external
 dependencies as URLs means that the code depends upon the other code is concise
 and clear, and our code and dependencies are tightly coupled together. If you
 want to see that dependency graph, you simply need to use `deno info` with a
@@ -240,12 +235,12 @@ https://deno.land/x/oak/examples/server.ts
 
 Deno has no strong opinions around "versions" of code. A URL is a URL is a URL.
 While Deno requires an appropriate media type in order to understand how to
-treat code, all the "opinions" about what code to serve up is left up to the
-web server. A server can implement semantic versioning to its hearts content,
-or do any sort of "magical" mapping of URLs to resources it wants. Deno doesn't
-care. For example `https://deno.land/x/` is effectively nothing but a URL
-redirect server, where it rewrites URLs to include a git commit-ish reference
-in the redirected URL. So `https://deno.land/x/oak@v4.0.0/mod.ts` becomes
+treat code, all the "opinions" about what code to serve up is left up to the web
+server. A server can implement semantic versioning to its hearts content, or do
+any sort of "magical" mapping of URLs to resources it wants. Deno doesn't care.
+For example `https://deno.land/x/` is effectively nothing but a URL redirect
+server, where it rewrites URLs to include a git commit-ish reference in the
+redirected URL. So `https://deno.land/x/oak@v4.0.0/mod.ts` becomes
 `https://raw.githubusercontent.com/oakserver/oak/v4.0.0/mod.ts`, which GitHub
 serves up a nice versioned module.
 
@@ -276,17 +271,17 @@ export {
   STATUS_TEXT,
 } from "https://deno.land/std@0.51.0/http/http_status.ts";
 export {
-  Cookies,
   Cookie,
-  setCookie,
-  getCookies,
+  Cookies,
   delCookie,
+  getCookies,
+  setCookie,
 } from "https://deno.land/std@0.51.0/http/cookie.ts";
 export {
   basename,
   extname,
-  join,
   isAbsolute,
+  join,
   normalize,
   parse,
   resolve,
@@ -314,19 +309,19 @@ TypeScript written for Deno, this is great, but let's say that you want to take
 advantage of pre-processing of the TypeScript to JavaScript, but still have the
 ability to consume that remote code safely. Deno supports a couple different
 ways to allow that to happen, but the most seamless is the support for the
-`X-TypeScript-Types` header. This header indicates to Deno where a types file
-is located which can be used when type checking the JavaScript file that you
-are depending upon. [Pika CDN](https://pika.dev/cdn) supports this. Any
-packages that are available on the CDN that have types associated with them will
-serve up that header and Deno will also fetch those types and use that when
-type checking the file.
+`X-TypeScript-Types` header. This header indicates to Deno where a types file is
+located which can be used when type checking the JavaScript file that you are
+depending upon. [Pika CDN](https://pika.dev/cdn) supports this. Any packages
+that are available on the CDN that have types associated with them will serve up
+that header and Deno will also fetch those types and use that when type checking
+the file.
 
 All this being said, there may still be a need to "remap" a remote (or local)
 dependency to what is expressed in the code. In this case, the unstable
 implementation of [import-maps](https://github.com/WICG/import-maps) can be
 used. It is a proposal specification that is part of the W3C incubator where
-browser standards come out of. It allows a map to be provided which will map
-a particular dependency in code to another resource, be it a local file or a
+browser standards come out of. It allows a map to be provided which will map a
+particular dependency in code to another resource, be it a local file or a
 remote module.
 
 We had it implemented in Deno for an extended period of time, as we had really
@@ -350,5 +345,5 @@ happen, but a lot of problems simply don't exist, or there are other ways to
 solve them that don't require your runtime to have strong opinions or be coupled
 to an external programme to manage your code.
 
-So my challenge to you is, flirt a bit with not having a package manager or
-a centralised package repository and see how it goes. You might never go back!
+So my challenge to you is, flirt a bit with not having a package manager or a
+centralised package repository and see how it goes. You might never go back!
