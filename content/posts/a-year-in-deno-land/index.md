@@ -63,7 +63,7 @@ All that being said, we are all males and of the ethnic majority of the country
 we reside in. Deno though has been a self organizing community. Ry and Bert had
 a previous work relationship and convinced Ben to join us, outside of that, the
 remaining 7 of us (soon to be 8) have come from the Deno community itself. That
-is great, that people with a passion or joining a company to work on their
+is great, that people with a passion are joining a company to work on their
 passion, but communities are communities, and unconscious bias easily works its
 way in.
 
