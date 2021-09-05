@@ -56,7 +56,7 @@ ways. We have decent multi cultural diversity. There is only one American who
 lives in America. The other American, me, hasn't lived in the US since 2006. We
 have Dutch, Polish, Japanese, Indian, Canadian and German folks. We have a
 spectrum of ages, with I believe me being the oldest at 48 with the youngest not
-being old enough to drink if they were in the US. We have at least two of use
+being old enough to drink if they were in the US. We have at least two of us
 that identify as part of the LGBTQ+ community.
 
 All that being said, we are all males and of the ethnic majority of the country
@@ -224,7 +224,7 @@ me to evaluate it.
 
 I have been doing TypeScript since 2014, heavily since 2015, and JavaScript
 heavily since 2008. I would say I "love" all three languages, and all three
-languages have their suite spot.
+languages have their sweet spot.
 
 Rust only reinforces my love of static typing though. Even being proficient at a
 language, static types not only save you from _run-it-and-pray_ behavior, they
