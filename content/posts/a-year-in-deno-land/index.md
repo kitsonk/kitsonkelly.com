@@ -172,7 +172,7 @@ and I almost always feel more energized and excited after talking to him 1-2-1.
 
 Ben is awesome, he knows a hell of a lot more than I do about programming, and
 he never talks down to me when I put forward some infantile code that he
-reviews. Luca has great energy, and is very bright, we don't always agree, but
+reviews. Luca has great energy, and is very bright. We don't always agree, but
 again, his ability to iterate on a problem usually ends up in a better place.
 Bartek is awesome, while appears to be somewhat contrarian at times, he also
 loves to collaborate and iterate on a problem. Yoshia-san is a quiet giant, he
