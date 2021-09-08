@@ -25,7 +25,7 @@ share some of my thoughts on doing so.
 
 ## My privilege
 
-It was a bit of a leap of faith to go work on Deno fulltime. I was very
+It was a bit of a leap of faith to go work on Deno full time. I was very
 comfortable working at ThoughtWorks in Australia. The _only_ reason to make the
 jump, really, was to see what could happen, working on a _passion project_ full
 time. Lots of people will throw out there "follow your dreams", but in reality,
@@ -33,9 +33,9 @@ for a lot of people that is total BS.
 
 Why? Because it is totally a position of privilege that I was able to do it.
 Early in my career I wasn't conscious of my privilege, but being a white-male
-from middle class of America is a whole lot of privilege, and made a lot
-possible for me, effectively served up to me on a silver platter. I was just
-lucky enough to be able to successfully ride the bow-wave.
+from the middle class of America is a whole lot of privilege, and made a lot
+possible for me, effectively serving me on a silver platter. I was just lucky
+enough to be able to successfully ride the bow-wave.
 
 The birth of my son in August 2018, and being able to take 7 weeks off work to
 look after him, was another bit of privilege that allowed me to work on my
@@ -43,27 +43,27 @@ passion project of Deno that I had discovered as soon as Ry released the
 prototype in May of that year.
 
 Sitting in Melbourne, in the midst of another hard lock-down due to COVID-19,
-working on Deno always make me reflect on my privilege of how lucky I am to have
-a wonderful family, being financially secure, doing work I enjoy in a very
+working on Deno always makes me reflect on my privilege of how lucky I am to
+have a wonderful family, being financially secure, doing work I enjoy in a very
 flexible way that allows me to help look after our 3yo. I must be in the 1% of
 1% of people that are that lucky.
 
 ## Diversity
 
 My one frustration/regret/challenge with Deno and the commercial company Deno
-Land Inc. is that in company we have a significant lack of diversity in certain
-ways. We have decent multi cultural diversity. There is only one American who
-lives in America. The other American, me, hasn't lived in the US since 2006. We
-have Dutch, Polish, Japanese, Indian, Canadian and German folks. We have a
-spectrum of ages, with I believe me being the oldest at 48 with the youngest not
-being old enough to drink if they were in the US. We have at least two of us
-that identify as part of the LGBTQ+ community.
+Land Inc. is that in the company we have a significant lack of diversity in
+certain ways. We have decent multi-cultural diversity. There is only one
+American who lives in America. The other American, me, hasn't lived in the US
+since 2006. We have Dutch, Polish, Japanese, Indian, Canadian and German folks.
+We have a spectrum of ages, with I believe me being the oldest at 48 with the
+youngest not being old enough to drink if they were in the US. We have at least
+two of us that identify as part of the LGBTQ+ community.
 
 All that being said, we are all males and of the ethnic majority of the country
-we reside in. Deno though has been a self organizing community. Ry and Bert had
-a previous work relationship and convinced Ben to join us, outside of that, the
-remaining 7 of us (soon to be 8) have come from the Deno community itself. That
-is great, that people with a passion are joining a company to work on their
+we reside in. Deno - though - has been a self organizing community. Ry and Bert
+had a previous work relationship and convinced Ben to join us, outside of that,
+the remaining 7 of us (soon to be 8) have come from the Deno community itself.
+It is great that people with a passion are joining a company to work on their
 passion, but communities are communities, and unconscious bias easily works its
 way in.
 
@@ -82,19 +82,19 @@ two years. While a lot of us find ourselves working remotely for the first time
 due to COVID-19, I had the experience. There are great things about it, and
 there are some really yucky things about it.
 
-The great is that it is a lot easier to get work-life balance right. I have
-never had a big delta in the motivation/challenge between local and remote work.
-Local does seem to get you dragged into endless meetings, though that is more
-likely a challenge of scale for larger organizations than really a local/remote
-thing.
+The great thing is that it is a lot easier to get work-life balance right. I
+have never had a big delta in the motivation/challenge between local and remote
+work. Local does seem to get you dragged into endless meetings, though that is
+more likely a challenge of scale for larger organizations than really a
+local/remote thing.
 
-The biggest drawback for me is the isolation. My nearest co-worker is Tokyo. I
-am isolated from everyone else time zone as well as spatially. When I worked for
-SitePen, we ended up with a few of us in London, which did mean it was easy once
-a week to meet up, let alone having a handful of people at least in the same
-timezone. Coupled with extended lock-downs in Melbourne, life is just super
-isolated right now. It is hard to divest how much of it is the isolation of
-lock-downs versus isolation of remote working at the moment.
+The biggest drawback for me is the isolation. My nearest co-worker is in Tokyo.
+I am isolated from everyone else's time zone as well as spatially. When I worked
+for SitePen, we ended up with a few of us in London, which did mean it was easy
+once a week to meet up, let alone having a handful of people at least in the
+same time zone. Coupled with extended lock-downs in Melbourne, life is just
+super isolated right now. It is hard to divest how much of it is the isolation
+of lock-downs versus isolation of remote working at the moment.
 
 ## The company
 
@@ -126,8 +126,8 @@ I generally see four traditional models in this space:
   many strings attached.
 - The _freemium_ model, where the commercial organization leverages an
   open-source project to build a commercial product, where the "good" features
-  go into the commercial project. This often compromises greatly the open source
-  project and features.
+  go into the commercial project. This often compromises the open source project
+  and features greatly.
 - The _consulting_ model, where an organization tries to use the profits from
   consulting around the open source project as an investment vehicle in the open
   source project. This I thought was the most sustainable model and thought that
@@ -141,8 +141,8 @@ that provides a pay-by-usage revenue stream. Deno Deploy shares a lot of code
 with the Deno CLI, but it isn't the Deno CLI, and it won't ever be the Deno CLI.
 It is a serverless web platform at the edge. (gotta love buzz words) Deploy is
 totally separate from the CLI, though they compliment each other (and trust me,
-there are some features in Deno CLI that would have never been there if it were
-Deploy needing to leverage them).
+there are some features in Deno CLI that would have never been there if Deploy
+needed to leverage them).
 
 Trying to build a sustainable open-source project is hard. Deno Land might not
 have it right, but we gotta try to find ways to do so, because people need to be
@@ -165,8 +165,8 @@ work with.
 I like working with Ry. I often find it frustrating, as he comes up with some
 crazy bat-shit ideas, or throws out ideas I am diametrically opposed to, but
 time and time again, those often get iterated upon and molded until we all have
-something better than what we started with. I really appreciate that ability to
-iterate in him. I like Bert. I like his style, I like his way of thinking. He
+something better than what we started with. I really appreciate his ability to
+self-iterate. I like Bert. I like his style, I like his way of thinking. He
 clearly has domains of experience that I don't have, where I learn a lot from,
 and I almost always feel more energized and excited after talking to him 1-2-1.
 
@@ -246,11 +246,11 @@ inline when needed, but so much less needed than before.
 
 What is a lot easier in TypeScript/JavaScript than Rust is scaffolding out a new
 API. Because of the strictness of Rust, it is really hard to "stub" stuff out,
-where as you can often still run your code in TypeScript/JavaScript without
+whereas you can often still run your code in TypeScript/JavaScript without
 crossing every T and dotting every I. This makes prototyping in
 TypeScript/JavaScript a lot easier. If you know what you are building, Rust is
 great. I really love Rust enums and iterators, plus also the patterns of traits
-like `From` and `Display` are super-powers that make you code super clean and
+like `From` and `Display` are superpowers that make you code super clean and
 super consumable. Every time I drop back into TypeScript/JavaScript, I miss the
 power of `match` and `.into()` and `if let` and returns from blocks to do
 variable assignment.
