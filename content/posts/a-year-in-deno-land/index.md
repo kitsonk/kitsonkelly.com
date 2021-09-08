@@ -240,7 +240,7 @@ out what you intended to do.
 Yeah, I write JavaScript sometimes still, but I always write it with JSDoc type
 annotations. I just can't stand that in my IDE that it is trying its best to
 guess at what I am trying to do. I like the safety of type safety. TypeScript
-has improved since 2014 though to such a great deal I find myself writing
+has improved since 2014 though to such a great extent I find myself writing
 TypeScript by default, because it is still easier to do the type annotations
 inline when needed, but so much less needed than before.
 
