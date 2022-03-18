@@ -30,7 +30,7 @@ as well as well as be akin to a
 modules from the web, in a similar fashion to navigating to a website in your
 browser.
 
-Of course the websites you browser vary greatly, and so do CDNs dedicated to
+Of course the websites you browse vary greatly, and so do CDNs dedicated to
 hosting modules. While [deno.land/x](https://deno.land/x/) aspires to be a
 registry of projects specifically tailored to Deno, there are whole classes of
 packages and modules not written with Deno in mind.
