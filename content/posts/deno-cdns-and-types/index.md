@@ -92,8 +92,8 @@ namespace.
 
 ## Deno module graph
 
-When you run your programme under Deno, it has to build up a representation of
-all the modules that are part of the programme. Deno needs to figure out what
+When you run your program under Deno, it has to build up a representation of
+all the modules that are part of the program. Deno needs to figure out what
 code needs to be transpiled from TypeScript to JavaScript, but also what code is
 required to be type checked.
 
@@ -105,11 +105,11 @@ built in TypeScript engine to do this (basically `tsc`) and when a module is
 requested, Deno provides it with the module in the _type_ slot if available
 otherwise the _code_ slot.
 
-Before the programme is ready to be run, any modules in the _code_ slot that
-aren't JavaScript get transpiled to JavaScript. Then the programme is ready to
+Before the program is ready to be run, any modules in the _code_ slot that
+aren't JavaScript get transpiled to JavaScript. Then the program is ready to
 be executed.
 
-You can see how this manifests itself by using `deno info` on a programme.
+You can see how this manifests itself by using `deno info` on a program.
 Modules that are in a _type_ slot get displayed in _italics_. You can see it
 more clearly if you use `deno info --json` where a dependency is listed with
 both its `"code"` and `"type"` module.
